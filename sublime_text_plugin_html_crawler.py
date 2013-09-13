@@ -1,4 +1,4 @@
-# crawls the naoqi documentation and creates a text file suitable for creating a Sublime Text plugin
+# parse the naoqi documentation and creates a text file suitable for creating a Sublime Text plugin
 # Mike McFarlane
 # v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and frameworks
 
@@ -66,16 +66,11 @@ def build_methods_dictionary(methods_html):
 	"""build a dictionary of relevant info for each method"""
 	"""return a dictionary"""
 	methods_dictionary = {}
-	#method_syntax_dictionary will go inside methods dictionary with class::method as it's key
-	method_syntax_dictionary = {}
+	
 
 	for i in methods_html:
 		index = 0
-		method_syntax_dictionary = {}
-		class_method = ""
-		framework = ""
-		class_name = ""
-		method_name = ""
+		method_syntax_list = ()
 		return_type = ""
 		argument0 = ""
 		argument1 = ""
@@ -87,13 +82,45 @@ def build_methods_dictionary(methods_html):
 		argument7 = ""
 		argument8 = ""
 		argument9 = ""
-
-		
+		#find framework name
+		start_framework = i.find("/naoqi/", 0) + len('/naoqi/')
+		end_framework = i.find("/", start_framework)
+		framework = i[start_framework:end_framework].upper()
+		print framework
+		#find class::method to use as key
+		start_class_method = i.find('''id="''', end_framework) + len('''id="''')
+		end_class_method = i.find(">", start_class_method) - 1
+		class_method = i[start_class_method:end_class_method]
+		print class_method
+		#find class name
+		start_class_name = i.find('''<tt class="descclassname">''', end_class_method) + +len('''<tt class="descclassname">''')
+		end_class_name = i.find("::</tt>", start_class_name)
+		class_name = i[start_class_name:end_class_name].upper()
+		print class_name
+		#find method
+		start_method_name = i.find('''<tt class="descname">''', end_class_name) + len('''<tt class="descname">''')
+		end_method_name = i.find("</tt>", start_method_name)
+		method_name = i[start_method_name:end_method_name]
+		print method_name
+		#find return type and arguments
+		while True:
+			index = i.find('''<a class="reference internal"''', index) 
+			if index == -1:
+				print "Done"
+				break
+			else:
+				# use fnmatch for a wildcard
+				start_return_type = i.find('''title="''', index) + len('''title="''')
+				end_return_type = i.find('''">''', start_return_type)
+				return_type = i[start_return_type:end_return_type]
+				index = end_return_type
+				print return_type
 
 
 		
 html_list = get_html_file_list()
 methods_html = find_methods(html_list)
+build_methods_dictionary(methods_html)
 
 
 
