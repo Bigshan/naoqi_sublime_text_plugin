@@ -1,6 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # parse the naoqi documentation and creates a text file suitable for creating a Sublime Text plugin
 # Mike McFarlane
 # v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and frameworks
+# TODO: BeautifulSoup - done
+# TODO: check for deprecated APIs
 
 """look for <dl class="function"> for the start of each method """
 """ then get everything between <dt and </dt> """
@@ -11,7 +16,7 @@
 
 import fnmatch
 import os
- 
+from bs4 import BeautifulSoup
 
 def get_html_file_list():
 	"""finds all the HTML API docs in a defined folder"""
@@ -62,60 +67,55 @@ def find_methods(html_list):
 	file_dump.close()
 	return methods_html
 
+def find_arguments(arg_string):
+	#find the arguments and tidy them up
+	#returns a list of the arguments
+	start_string = arg_string.find("(") + 1
+	end_string = arg_string.find(")")
+	arg_string = arg_string[start_string:end_string]
+	#remove ampersand chars
+	arg_string = arg_string.replace("&", "")
+	arg_list = []
+	while True:
+		comma_position = arg_string.find(",", 0)
+		if comma_position == -1:
+			arg_list.append(str(arg_string))
+			break
+		else:
+			arg_list.append(str(arg_string[:comma_position]))
+			arg_string = arg_string[comma_position+2:]
+	return arg_list
+
 def build_methods_dictionary(methods_html):
 	"""build a dictionary of relevant info for each method"""
 	"""return a dictionary"""
 	methods_dictionary = {}
 	
-
-	for i in methods_html:
-		index = 0
-		method_syntax_list = ()
-		return_type = ""
-		argument0 = ""
-		argument1 = ""
-		argument2 = ""
-		argument3 = ""
-		argument4 = ""
-		argument5 = ""
-		argument6 = ""
-		argument7 = ""
-		argument8 = ""
-		argument9 = ""
+	for i in methods_html:		
 		#find framework name
 		start_framework = i.find("/naoqi/", 0) + len('/naoqi/')
 		end_framework = i.find("/", start_framework)
 		framework = i[start_framework:end_framework].upper()
-		print framework
-		#find class::method to use as key
-		start_class_method = i.find('''id="''', end_framework) + len('''id="''')
-		end_class_method = i.find(">", start_class_method) - 1
-		class_method = i[start_class_method:end_class_method]
-		print class_method
-		#find class name
-		start_class_name = i.find('''<tt class="descclassname">''', end_class_method) + +len('''<tt class="descclassname">''')
-		end_class_name = i.find("::</tt>", start_class_name)
-		class_name = i[start_class_name:end_class_name].upper()
-		print class_name
-		#find method
-		start_method_name = i.find('''<tt class="descname">''', end_class_name) + len('''<tt class="descname">''')
-		end_method_name = i.find("</tt>", start_method_name)
-		method_name = i[start_method_name:end_method_name]
-		print method_name
-		#find return type and arguments
-		while True:
-			index = i.find('''<a class="reference internal"''', index) 
-			if index == -1:
-				print "Done"
-				break
-			else:
-				# use fnmatch for a wildcard
-				start_return_type = i.find('''title="''', index) + len('''title="''')
-				end_return_type = i.find('''">''', start_return_type)
-				return_type = i[start_return_type:end_return_type]
-				index = end_return_type
-				print return_type
-
+		#find return type, class, method and arguments
+		#need to remove the space in 'reference internal' or not recognised as class by beautiful soup
+		j = i.replace("reference internal", "referenceinternal")
+		soup = BeautifulSoup(j)
+		first_internal_index = 0
+		for i in soup.select(".referenceinternal"):
+			if first_internal_index == 0:
+				print "return: " + i.string
+				first_internal_index = 1
+			nao_arg_list = find_arguments(soup.get_text())
+		for i in soup.select(".descclassname"):
+			nao_class = i.string
+		for i in soup.select(".descname"):
+			nao_method = i.string + "\n"
+		print "Framework: " + framework
+		print "Class: " + nao_class
+		print "Method: " + nao_method
+		for i in nao_arg_list:
+			print "Argument: " + i
+		print "\n"
 
 		
 html_list = get_html_file_list()
