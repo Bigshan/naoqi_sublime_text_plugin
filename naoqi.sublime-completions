@@ -1,0 +1,4205 @@
+key: ALAudioDeviceProxy::setParameter
+
+return void
+arg0 const std::string parameter
+arg1 const int value
+method setParameter
+
+framework AUDIO
+class ALAudioDeviceProxy
+key: ALMemoryProxy::subscribeToEvent
+
+return void
+arg0 const std::string name
+arg1 const std::string callbackModule
+arg2 const std::string callbackMessage
+arg3 const std::string callbacMethod
+method subscribeToEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALVideoDeviceProxy::getFrameRate
+
+arg0 const std::string Name
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getFrameRate
+
+key: ALLoggerProxy::separator
+
+arg0 
+framework CORE
+return void
+class ALLoggerProxy
+method separator
+
+key: ALVisionToolboxProxy::startVideoRecord_adv
+
+return void
+arg0 const std::string videoName
+arg1 const float framerate
+arg2 const std::string format
+arg3 const int resIndex
+arg4 const int numFrames
+method startVideoRecord_adv
+
+framework VISION
+class ALVisionToolboxProxy
+key: ALVideoDeviceProxy::getCameraModel
+
+arg0 const int CameraIndex
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getCameraModel
+
+key: ALVideoDeviceProxy::getActiveCamera
+
+arg0 
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getActiveCamera
+
+key: ALExtractor::getMyPrecision
+
+arg0 const std::string pSubscribedName
+framework CORE
+return float
+class ALExtractor
+method getMyPrecision
+
+key: ALLeds::earLedsSetAngle
+
+return void
+arg0 const int degrees
+arg1 const float duration
+arg2 const bool leaveOnAtEnd
+method earLedsSetAngle
+
+framework SENSORS
+class ALLeds
+key: ALAudioPlayerProxy::playInLoop
+
+return void
+arg0 const int taskId
+arg1 const float volume
+arg2 const float pan
+method playInLoop
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALLauncherProxy::isModulePresent
+
+arg0 const std::string moduleName
+framework CORE
+return bool
+class ALLauncherProxy
+method isModulePresent
+
+key: ALBehaviorManagerProxy::playDefaultProject
+
+arg0 
+framework CORE
+return void
+class ALBehaviorManagerProxy
+method playDefaultProject
+
+key: ALMotionProxy::getWalkArmsEnabled
+
+arg0 
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getWalkArmsEnabled
+
+key: ALRobotPosture::getPostureList
+
+arg0 
+framework MOTION
+return std::vector<std::string>
+class ALRobotPosture
+method getPostureList
+
+key: ALMemoryProxy::removeMicroEvent
+
+arg0 const std::string name
+framework CORE
+return void
+class ALMemoryProxy
+method removeMicroEvent
+
+key: ALAudioDeviceProxy::playSine
+
+return void
+arg0 const int frequence
+arg1 const int gain
+arg2 const int pan
+arg3 const float duration
+method playSine
+
+framework AUDIO
+class ALAudioDeviceProxy
+key: ALVideoDeviceProxy::setActiveCamera
+
+return bool
+arg0 const std::string Name
+arg1 const int ActiveCamera
+method setActiveCamera
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::changeAngles
+
+return void
+arg0 const AL::ALValue names
+arg1 const AL::ALValue changes
+arg2 const float fractionMaxSpeed
+method changeAngles
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::getCOM
+
+return std::vector<float>
+arg0 const std::string pName
+arg1 const int pSpace
+arg2 const bool pUseSensorValues
+method getCOM
+
+framework MOTION
+class ALMotionProxy
+key: ALVideoDeviceProxy::setFrameRate
+
+return bool
+arg0 const std::string Name
+arg1 const int Fps
+method setFrameRate
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALAudioDeviceProxy::openAudioInputs
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method openAudioInputs
+
+key: ALFaceDetectionProxy::isTrackingEnabled
+
+arg0 
+framework VISION
+return bool
+class ALFaceDetectionProxy
+method isTrackingEnabled
+
+key: ALTextToSpeechProxy::sayToFileAndPlay
+
+arg0 const std::string stringToSay
+framework AUDIO
+return int
+class ALTextToSpeechProxy
+method sayToFileAndPlay
+
+key: ALConnectionManagerProxy::disconnect
+
+arg0 const std::string serviceId
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method disconnect
+
+key: ALMotionProxy::setPosition
+
+return void
+arg0 const std::string chainName
+arg1 const int space
+arg2 const std::vector<float> position
+arg3 const float fractionMaxSpeed
+arg4 const int axisMask
+method setPosition
+
+framework MOTION
+class ALMotionProxy
+key: ALInfraredProxy::initReception
+
+arg0 const int RepeatThreshold
+framework SENSORS
+return void
+class ALInfraredProxy
+method initReception
+
+key: ALMemoryProxy::getDataList
+
+arg0 const std::string filter
+framework CORE
+return std::vector<std::string>
+class ALMemoryProxy
+method getDataList
+
+key: ALMotionProxy::wbEnable
+
+arg0 const bool isEnabled
+framework MOTION
+return void
+class ALMotionProxy
+method wbEnable
+
+key: ALVideoDeviceProxy::getImgSizeFromAngSize
+
+arg0 const std::vector<float> angSize
+framework VISION
+return std::vector<float>
+class ALVideoDeviceProxy
+method getImgSizeFromAngSize
+
+key: ALAudioSourceLocalizationProxy::unsubscribe
+
+arg0 const std::string name
+framework AUDIO
+return void
+class ALAudioSourceLocalizationProxy
+method unsubscribe
+
+key: ALMemoryProxy::getDataListName
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALMemoryProxy
+method getDataListName
+
+key: ALVideoDeviceProxy::stopFrameGrabber
+
+arg0 
+framework VISION
+return bool
+class ALVideoDeviceProxy
+method stopFrameGrabber
+
+key: ALVideoDeviceProxy::subscribeCamera
+
+return std::string
+arg0 const std::string Name
+arg1 const int CameraIndex
+arg2 const int Resolution
+arg3 const int ColorSpace
+arg4 const int Fps
+method subscribeCamera
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::killTasksUsingResources
+
+arg0 const std::vector<std::string> resourceNames
+framework MOTION
+return void
+class ALMotionProxy
+method killTasksUsingResources
+
+key: ALVideoDeviceProxy::getColorSpace
+
+arg0 const std::string Name
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getColorSpace
+
+key: ALMotionProxy::setTransform
+
+return void
+arg0 const std::string chainName
+arg1 const int space
+arg2 const std::vector<float> transform
+arg3 const float fractionMaxSpeed
+arg4 const int axisMask
+method setTransform
+
+framework MOTION
+class ALMotionProxy
+key: ALBonjourProxy::declare
+
+arg0 
+framework CORE
+return void
+class ALBonjourProxy
+method declare
+
+key: ALLeds::listGroup
+
+arg0 const std::string groupName
+framework SENSORS
+return std::vector<std::string>
+class ALLeds
+method listGroup
+
+key: ALMemoryProxy::getData
+
+return AL::ALValue
+arg0 const std::string key
+arg1 const int deprecatedParameter
+method getData
+
+framework CORE
+class ALMemoryProxy
+key: ALResourceManagerProxy::waitForLocalResource
+
+return void
+arg0 const std::string resourceName
+arg1 const boost::shared_ptr<AL::ALOwner> ownerPtr
+arg2 const std::string callbackName
+arg3 const int timeoutSeconds
+method waitForLocalResource
+
+framework CORE
+class ALResourceManagerProxy
+key: ALAudioPlayerProxy::setVolume
+
+return void
+arg0 const int taskId
+arg1 const float volume
+method setVolume
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALAudioPlayerProxy::playSine
+
+return void
+arg0 const int frequence
+arg1 const int gain
+arg2 const int pan
+arg3 const float duration
+method playSine
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALVideoDeviceProxy::subscribeCameras
+
+return std::string
+arg0 const std::string Name
+arg1 const AL::ALValue CameraIndexes
+arg2 const AL::ALValue Resolutions
+arg3 const AL::ALValue ColorSpaces
+arg4 const int Fps
+method subscribeCameras
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALVideoRecorderProxy::getResolution
+
+arg0 
+framework VISION
+return int
+class ALVideoRecorderProxy
+method getResolution
+
+key: ALVisionRecognitionProxy::changeDatabase
+
+return int
+arg0 const std::string databasePath
+arg1 const std::string databaseName
+method changeDatabase
+
+framework VISION
+class ALVisionRecognitionProxy
+key: ALTextToSpeechProxy::getLanguage
+
+arg0 
+framework AUDIO
+return std::string
+class ALTextToSpeechProxy
+method getLanguage
+
+key: ALAudioDeviceProxy::getLeftMicEnergy
+
+arg0 
+framework AUDIO
+return float
+class ALAudioDeviceProxy
+method getLeftMicEnergy
+
+key: ALLoggerProxy::setVerbosity
+
+arg0 const std::string verbosity
+framework CORE
+return void
+class ALLoggerProxy
+method setVerbosity
+
+key: ALConnectionManagerProxy::state
+
+arg0 
+framework CONNECTIONMANAGER
+return std::string
+class ALConnectionManagerProxy
+method state
+
+key: ALTextToSpeechProxy::getVolume
+
+arg0 
+framework AUDIO
+return float
+class ALTextToSpeechProxy
+method getVolume
+
+key: ALMotionProxy::angleInterpolationBezier
+
+return void
+arg0 const std::vector<std::string> jointNames
+arg1 const AL::ALValue times
+arg2 const AL::ALValue controlPoints
+method angleInterpolationBezier
+
+framework MOTION
+class ALMotionProxy
+key: ALModule::getMethodList
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALModule
+method getMethodList
+
+key: ALAudioDeviceProxy::flushAudioOutputs
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method flushAudioOutputs
+
+key: ALRobotPosture::setMaxTryNumber
+
+arg0 const int maxTryNumber
+framework MOTION
+return void
+class ALRobotPosture
+method setMaxTryNumber
+
+key: ALMotionProxy::wbFootState
+
+return void
+arg0 const std::string stateName
+arg1 const std::string supportLeg
+method wbFootState
+
+framework MOTION
+class ALMotionProxy
+key: ALVideoDeviceProxy::getImgInfoFromAngInfo
+
+arg0 const std::vector<float> angles
+framework VISION
+return std::vector<float>
+class ALVideoDeviceProxy
+method getImgInfoFromAngInfo
+
+key: ALLeds::listLEDs
+
+arg0 
+framework SENSORS
+return std::vector<std::string>
+class ALLeds
+method listLEDs
+
+key: ALAudioPlayerProxy::playWebStream
+
+return void
+arg0 const std::string streamName
+arg1 const float volume
+arg2 const float pan
+method playWebStream
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALVideoDeviceProxy::setParamDefault
+
+arg0 const int Param
+framework VISION
+return void
+class ALVideoDeviceProxy
+method setParamDefault
+
+key: ALAudioDeviceProxy::startMicrophonesRecording
+
+arg0 const std::string fileName
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method startMicrophonesRecording
+
+key: ALLauncherProxy::getGlobalModuleList
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALLauncherProxy
+method getGlobalModuleList
+
+key: ALRobotPosture::goToPosture
+
+return bool
+arg0 const std::string postureName
+arg1 const float speed
+method goToPosture
+
+framework MOTION
+class ALRobotPosture
+key: ALVideoDeviceProxy::getGVMColorSpace
+
+arg0 const std::string id
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getGVMColorSpace
+
+key: ALMotionProxy::angleInterpolation
+
+return void
+arg0 const AL::ALValue names
+arg1 const AL::ALValue angleLists
+arg2 const AL::ALValue timeLists
+arg3 const bool isAbsolute
+method angleInterpolation
+
+framework MOTION
+class ALMotionProxy
+key: ALInfraredProxy::sendRemoteKeyWithTime
+
+return void
+arg0 const std::string Remote
+arg1 const std::string Key
+arg2 const int TimeMs
+method sendRemoteKeyWithTime
+
+framework SENSORS
+class ALInfraredProxy
+key: ALVisualCompassProxy::getReferenceQuality
+
+arg0 
+framework VISION
+return int
+class ALVisualCompassProxy
+method getReferenceQuality
+
+key: ALSpeechRecognitionProxy::setVocabulary
+
+return void
+arg0 const std::vector<std::string> vocabulary
+arg1 const bool enableWordSpotting
+method setVocabulary
+
+framework AUDIO
+class ALSpeechRecognitionProxy
+key: ALPhotoCaptureProxy::setPictureFormat
+
+arg0 const std::string pictureFormat
+framework VISION
+return void
+class ALPhotoCaptureProxy
+method setPictureFormat
+
+key: ALLeds::rotateEyes
+
+return void
+arg0 const int rgb
+arg1 const float timeForRotation
+arg2 const float totalDuration
+method rotateEyes
+
+framework SENSORS
+class ALLeds
+key: ALAudioPlayerProxy::stopAll
+
+arg0 
+framework AUDIO
+return void
+class ALAudioPlayerProxy
+method stopAll
+
+key: ALSensorsProxy::unsubscribe
+
+arg0 const std::string name
+framework SENSORS
+return void
+class ALSensorsProxy
+method unsubscribe
+
+key: ALResourceManagerProxy::waitForLocalResourcesTree
+
+return void
+arg0 const std::vector<std::string> resourceName
+arg1 const boost::shared_ptr<AL::ALHierarchyOwner> treeOwnerPtr
+arg2 const std::string callbackName
+arg3 const int timeoutSeconds
+method waitForLocalResourcesTree
+
+framework CORE
+class ALResourceManagerProxy
+key: ALConnectionManagerProxy::tetheringName
+
+arg0 const std::string technology
+framework CONNECTIONMANAGER
+return std::string
+class ALConnectionManagerProxy
+method tetheringName
+
+key: ALLeds::listGroups
+
+arg0 
+framework SENSORS
+return std::vector<std::string>
+class ALLeds
+method listGroups
+
+key: ALSpeechRecognitionProxy::unsubscribe
+
+arg0 const std::string name
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method unsubscribe
+
+key: ALLoggerProxy::warn
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method warn
+
+framework CORE
+class ALLoggerProxy
+key: ALMotionProxy::angleInterpolationWithSpeed
+
+return void
+arg0 const AL::ALValue names
+arg1 const AL::ALValue targetAngles
+arg2 const float maxSpeedFraction
+method angleInterpolationWithSpeed
+
+framework MOTION
+class ALMotionProxy
+key: ALResourceManagerProxy::releaseLocalResource
+
+return void
+arg0 const std::string resourceName
+arg1 const boost::shared_ptr<AL::ALOwner> ownerName
+method releaseLocalResource
+
+framework CORE
+class ALResourceManagerProxy
+key: ALLeds::fadeListRGB
+
+return void
+arg0 const std::string name
+arg1 const AL::ALValue rgbList
+arg2 const AL::ALValue timeList
+method fadeListRGB
+
+framework SENSORS
+class ALLeds
+key: ALRobotPosture::applyPosture
+
+return bool
+arg0 const std::string postureName
+arg1 const float speed
+method applyPosture
+
+framework MOTION
+class ALRobotPosture
+key: ALAudioDeviceProxy::unsubscribe
+
+arg0 const std::string module
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method unsubscribe
+
+key: ALAudioPlayerProxy::getCurrentPosition
+
+arg0 const int taskId
+framework AUDIO
+return float
+class ALAudioPlayerProxy
+method getCurrentPosition
+
+key: ALVideoDeviceProxy::getExpectedImageParameters
+
+arg0 
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getExpectedImageParameters
+
+key: ALExtractor::getCurrentPrecision
+
+arg0 
+framework CORE
+return float
+class ALExtractor
+method getCurrentPrecision
+
+key: ALVisionExtractor::setFrameRate
+
+arg0 const int framerate
+framework CORE
+return bool
+class ALVisionExtractor
+method setFrameRate
+
+key: ALAudioPlayerProxy::unloadAllFiles
+
+arg0 
+framework AUDIO
+return void
+class ALAudioPlayerProxy
+method unloadAllFiles
+
+key: ALLoggerProxy::logInSys
+
+arg0 
+framework CORE
+return void
+class ALLoggerProxy
+method logInSys
+
+key: ALMotionProxy::moveIsActive
+
+arg0 
+framework MOTION
+return bool
+class ALMotionProxy
+method moveIsActive
+
+key: ALVideoRecorderProxy::setVideoFormat
+
+arg0 const std::string videoFormat
+framework VISION
+return void
+class ALVideoRecorderProxy
+method setVideoFormat
+
+key: ALVideoDeviceProxy::setCamerasParameterToDefault
+
+return AL::ALValue
+arg0 const std::string Name
+arg1 const int Id
+method setCamerasParameterToDefault
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALVideoRecorderProxy::setFrameRate
+
+arg0 const int frameRate
+framework VISION
+return void
+class ALVideoRecorderProxy
+method setFrameRate
+
+key: ALVideoDeviceProxy::getParam
+
+arg0 const int Param
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getParam
+
+key: ALResourceManagerProxy::areResourcesFree
+
+arg0 const std::vector<std::string> resourceNames
+framework CORE
+return bool
+class ALResourceManagerProxy
+method areResourcesFree
+
+key: ALAudioDeviceProxy::setOutputVolume
+
+arg0 const int volume
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method setOutputVolume
+
+key: ALMemoryProxy::getEventList
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALMemoryProxy
+method getEventList
+
+key: ALNavigationProxy::moveTo
+
+return bool
+arg0 const float x
+arg1 const float y
+arg2 const float theta
+arg3 const AL::ALValue moveConfig
+method moveTo
+
+framework MOTION
+class ALNavigationProxy
+key: DCMProxy::set
+
+arg0 const AL::ALValue commands
+framework SENSORS
+return void
+class DCMProxy
+method set
+
+key: ALVideoDeviceProxy::getVIMColorSpace
+
+arg0 
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getVIMColorSpace
+
+key: ALVideoDeviceProxy::setResolution
+
+return bool
+arg0 const std::string Name
+arg1 const int Resolution
+method setResolution
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::killMove
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method killMove
+
+key: ALMotionProxy::setFallManagerEnabled
+
+arg0 const bool enable
+framework MOTION
+return void
+class ALMotionProxy
+method setFallManagerEnabled
+
+key: ALMotionProxy::moveTo
+
+return void
+arg0 const AL::ALValue controlPoints
+arg1 const AL::ALValue moveConfig
+method moveTo
+
+framework MOTION
+class ALMotionProxy
+key: ALInfraredProxy::sendIpAddress
+
+arg0 const std::string IP
+framework SENSORS
+return void
+class ALInfraredProxy
+method sendIpAddress
+
+key: ALExtractor::getOutputNames
+
+arg0 void
+framework CORE
+return std::vector<std::string>
+class ALExtractor
+method getOutputNames
+
+key: ALConnectionManagerProxy::forget
+
+arg0 const std::string serviceId
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method forget
+
+key: ALMotionProxy::getRobotConfig
+
+arg0 
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getRobotConfig
+
+key: ALVideoDeviceProxy::getCamerasParameter
+
+return AL::ALValue
+arg0 const std::string Name
+arg1 const int Id
+method getCamerasParameter
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALSpeechRecognitionProxy::subscribe
+
+arg0 const std::string name
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method subscribe
+
+key: ALVideoDeviceProxy::getImageRemote
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getImageRemote
+
+key: ALResourceManagerProxy::declareEvent
+
+return void
+arg0 const std::string eventName
+arg1 const std::string extractorName
+method declareEvent
+
+framework CORE
+class ALResourceManagerProxy
+key: ALVideoDeviceProxy::getImgPosFromAngPos
+
+arg0 const std::vector<float> angPos
+framework VISION
+return std::vector<float>
+class ALVideoDeviceProxy
+method getImgPosFromAngPos
+
+key: ALMotionRecorder::startPeriodicRecording
+
+return void
+arg0 const std::vector<std::string> jointsToRecord
+arg1 const int nbPoses
+arg2 const bool extensionAllowed
+arg3 const float timeStep
+arg4 const std::vector<std::string> jointsToReplay
+arg5 const AL::ALValue replayData
+method startPeriodicRecording
+
+framework MOTION
+class ALMotionRecorder
+key: ALLauncherProxy::launchPythonModule
+
+arg0 const std::string pythonModule
+framework CORE
+return bool
+class ALLauncherProxy
+method launchPythonModule
+
+key: ALAudioPlayerProxy::unloadFile
+
+arg0 const int taskId
+framework AUDIO
+return void
+class ALAudioPlayerProxy
+method unloadFile
+
+key: ALLoggerProxy::logInFile
+
+arg0 const std::string fileName
+framework CORE
+return void
+class ALLoggerProxy
+method logInFile
+
+key: ALLeds::off
+
+arg0 const std::string name
+framework SENSORS
+return void
+class ALLeds
+method off
+
+key: ALMotionProxy::setAngles
+
+return void
+arg0 const AL::ALValue names
+arg1 const AL::ALValue angles
+arg2 const float fractionMaxSpeed
+method setAngles
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::getMotionCycleTime
+
+arg0 
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getMotionCycleTime
+
+key: ALFaceDetectionProxy::clearDatabase
+
+arg0 
+framework VISION
+return bool
+class ALFaceDetectionProxy
+method clearDatabase
+
+key: ALVideoDeviceProxy::getColorSpaces
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getColorSpaces
+
+key: ALMotionProxy::move
+
+return void
+arg0 const float x
+arg1 const float y
+arg2 const float theta
+arg3 const AL::ALValue moveConfig
+method move
+
+framework MOTION
+class ALMotionProxy
+key: ALAudioPlayerProxy::playFile
+
+return void
+arg0 const std::string fileName
+arg1 const float volume
+arg2 const float pan
+method playFile
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALSoundDetection::getEvents
+
+arg0 const std::string type
+framework AUDIO
+return AL::ALValue
+class ALSoundDetection
+method getEvents
+
+key: ALPreferencesProxy::saveToMemory
+
+arg0 const AL::ALValue prefs
+framework CORE
+return bool
+class ALPreferencesProxy
+method saveToMemory
+
+key: DCMProxy::calibration
+
+arg0 const AL::ALValue calibrationInput
+framework SENSORS
+return void
+class DCMProxy
+method calibration
+
+key: ALLoggerProxy::fatal
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method fatal
+
+framework CORE
+class ALLoggerProxy
+key: ALVideoRecorderProxy::getFrameRate
+
+arg0 
+framework VISION
+return int
+class ALVideoRecorderProxy
+method getFrameRate
+
+key: ALMotionProxy::getRobotPosition
+
+arg0 const bool useSensors
+framework MOTION
+return std::vector<float>
+class ALMotionProxy
+method getRobotPosition
+
+key: ALMemoryProxy::raiseMicroEvent
+
+return void
+arg0 const std::string name
+arg1 const AL::ALValue value
+method raiseMicroEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALVideoDeviceProxy::getImgInfoFromAngInfoWithRes
+
+return std::vector<float>
+arg0 const std::vector<float> angInfo
+arg1 const int resIndex
+method getImgInfoFromAngInfoWithRes
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALLauncherProxy::launchLocal
+
+arg0 const std::string moduleName
+framework CORE
+return std::vector<std::string>
+class ALLauncherProxy
+method launchLocal
+
+key: ALFaceDetectionProxy::reLearnFace
+
+arg0 const std::string name
+framework VISION
+return bool
+class ALFaceDetectionProxy
+method reLearnFace
+
+key: ALLaserProxy::setOpeningAngle
+
+return void
+arg0 const float angle_min_f
+arg1 const float angle_max_f
+method setOpeningAngle
+
+framework SENSORS
+class ALLaserProxy
+key: ALMotionProxy::stiffnessInterpolation
+
+return void
+arg0 const AL::ALValue names
+arg1 const AL::ALValue stiffnessLists
+arg2 const AL::ALValue timeLists
+method stiffnessInterpolation
+
+framework MOTION
+class ALMotionProxy
+key: ALAudioDeviceProxy::disableEnergyComputation
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method disableEnergyComputation
+
+key: ALVisionToolboxProxy::takePictureRegularly
+
+return void
+arg0 const float secondsBetweenTwoShots
+arg1 const std::string pathAndNameRoot
+arg2 const bool overwriteImage
+arg3 const std::string imageRecordFormat
+arg4 const int resolution
+method takePictureRegularly
+
+framework VISION
+class ALVisionToolboxProxy
+key: ALMotionProxy::areResourcesAvailable
+
+arg0 const std::vector<std::string> resourceNames
+framework MOTION
+return bool
+class ALMotionProxy
+method areResourcesAvailable
+
+key: ALBehaviorManagerProxy::stopBehavior
+
+arg0 const std::string name
+framework CORE
+return void
+class ALBehaviorManagerProxy
+method stopBehavior
+
+key: ALSensorsProxy::getOutputNames
+
+arg0 
+framework SENSORS
+return std::vector<std::string>
+class ALSensorsProxy
+method getOutputNames
+
+key: ALMotionProxy::setWalkArmsEnabled
+
+return void
+arg0 const bool leftArmEnable
+arg1 const bool rightArmEnable
+method setWalkArmsEnabled
+
+framework MOTION
+class ALMotionProxy
+key: ALVideoDeviceProxy::stopVideo
+
+arg0 const std::string Name
+framework VISION
+return bool
+class ALVideoDeviceProxy
+method stopVideo
+
+key: ALMemoryProxy::unregisterModuleReference
+
+arg0 const std::string moduleName
+framework CORE
+return void
+class ALMemoryProxy
+method unregisterModuleReference
+
+key: ALRobotPosture::getPostureFamilyList
+
+arg0 
+framework MOTION
+return std::vector<std::string>
+class ALRobotPosture
+method getPostureFamilyList
+
+key: ALSensorsProxy::getSubscribersInfo
+
+arg0 
+framework SENSORS
+return AL::ALValue
+class ALSensorsProxy
+method getSubscribersInfo
+
+key: ALSensorsProxy::getMyPrecision
+
+arg0 const std::string name
+framework SENSORS
+return float
+class ALSensorsProxy
+method getMyPrecision
+
+key: ALVideoDeviceProxy::sizesToResolution
+
+return int
+arg0 const int Width
+arg1 const int Height
+method sizesToResolution
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALVideoDeviceProxy::getImagesRemote
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getImagesRemote
+
+key: ALVisualCompassProxy::getCurrentImage
+
+arg0 
+framework VISION
+return AL::ALValue
+class ALVisualCompassProxy
+method getCurrentImage
+
+key: ALVideoDeviceProxy::releaseImages
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method releaseImages
+
+key: ALMotionProxy::stopMove
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method stopMove
+
+key: ALMotionProxy::wbSetEffectorControl
+
+return void
+arg0 const std::string effectorName
+arg1 const AL::ALValue targetCoordinate
+method wbSetEffectorControl
+
+framework MOTION
+class ALMotionProxy
+key: ALVideoDeviceProxy::unsubscribe
+
+arg0 const std::string Name
+framework VISION
+return void
+class ALVideoDeviceProxy
+method unsubscribe
+
+key: ALVideoDeviceProxy::releaseDirectRawImages
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method releaseDirectRawImages
+
+key: ALDarknessDetectionProxy::getDarknessThreshold
+
+arg0 
+framework VISION
+return int
+class ALDarknessDetectionProxy
+method getDarknessThreshold
+
+key: ALAudioPlayerProxy::play
+
+return void
+arg0 const int taskId
+arg1 const float volume
+arg2 const float pan
+method play
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALMotionRecorder::startInteractiveRecording
+
+return void
+arg0 const std::vector<std::string> jointsToRecord
+arg1 const int nbPoses
+arg2 const bool extensionAllowed
+arg3 const int mode
+method startInteractiveRecording
+
+framework MOTION
+class ALMotionRecorder
+key: ALPhotoCaptureProxy::getPictureFormat
+
+arg0 
+framework VISION
+return std::string
+class ALPhotoCaptureProxy
+method getPictureFormat
+
+key: ALMemoryProxy::setDescription
+
+return void
+arg0 const std::string name
+arg1 const std::string description
+method setDescription
+
+framework CORE
+class ALMemoryProxy
+key: ALVideoDeviceProxy::getAngularSizeFromImageSize
+
+return std::vector<float>
+arg0 const int CameraIndex
+arg1 const std::vector<float> ImageSize
+method getAngularSizeFromImageSize
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALPhotoCaptureProxy::takePicture
+
+return AL::ALValue
+arg0 const std::string folderPath
+arg1 const std::string fileName
+arg2 const bool overwrite
+method takePicture
+
+framework VISION
+class ALPhotoCaptureProxy
+key: ALVideoDeviceProxy::setParam
+
+return void
+arg0 const int Param
+arg1 const int NewValue
+method setParam
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALVideoDeviceProxy::getAngSizeFromImgSize
+
+arg0 const std::vector<float> imgSize
+framework VISION
+return std::vector<float>
+class ALVideoDeviceProxy
+method getAngSizeFromImgSize
+
+key: ALTextToSpeechProxy::setLanguageDefaultVoice
+
+return void
+arg0 const std::string language
+arg1 const std::string voice
+method setLanguageDefaultVoice
+
+framework AUDIO
+class ALTextToSpeechProxy
+key: ALExtractor::subscribe
+
+arg0 const std::string pSubscribedName
+framework CORE
+return void
+class ALExtractor
+method subscribe
+
+key: ALFaceTrackerProxy::setWholeBodyOn
+
+arg0 const bool pWholeBodyOn
+framework TRACKERS
+return void
+class ALFaceTrackerProxy
+method setWholeBodyOn
+
+key: ALVideoRecorderProxy::startRecording
+
+return void
+arg0 const std::string folderPath
+arg1 const std::string fileName
+arg2 const bool overwrite
+method startRecording
+
+framework VISION
+class ALVideoRecorderProxy
+key: ALVideoDeviceProxy::setColorSpace
+
+return bool
+arg0 const std::string Name
+arg1 const int ColorSpace
+method setColorSpace
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALVisionExtractor::isProcessing
+
+arg0 
+framework CORE
+return bool
+class ALVisionExtractor
+method isProcessing
+
+key: ALVideoDeviceProxy::getVIMResolution
+
+arg0 
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getVIMResolution
+
+key: ALAudioPlayerProxy::loadFile
+
+arg0 const std::string fileName
+framework AUDIO
+return int
+class ALAudioPlayerProxy
+method loadFile
+
+key: ALLaserProxy::laserOFF
+
+arg0 
+framework SENSORS
+return void
+class ALLaserProxy
+method laserOFF
+
+key: ALMotionProxy::getFootGaitConfig
+
+arg0 const std::string config
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getFootGaitConfig
+
+key: ALVisionToolboxProxy::isItDark
+
+arg0 
+framework VISION
+return int
+class ALVisionToolboxProxy
+method isItDark
+
+key: ALPhotoCaptureProxy::getResolution
+
+arg0 
+framework VISION
+return int
+class ALPhotoCaptureProxy
+method getResolution
+
+key: ALVideoDeviceProxy::releaseDirectRawImage
+
+arg0 const std::string Name
+framework VISION
+return bool
+class ALVideoDeviceProxy
+method releaseDirectRawImage
+
+key: ALPhotoCaptureProxy::setResolution
+
+arg0 const int resolution
+framework VISION
+return void
+class ALPhotoCaptureProxy
+method setResolution
+
+key: ALMotionProxy::positionInterpolations
+
+return void
+arg0 const std::vector<std::string> effectorNames
+arg1 const int taskSpaceForAllPaths
+arg2 const AL::ALValue paths
+arg3 const AL::ALValue axisMasks
+arg4 const AL::ALValue relativeTimes
+arg5 const bool isAbsolute
+method positionInterpolations
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::openHand
+
+arg0 const std::string handName
+framework MOTION
+return void
+class ALMotionProxy
+method openHand
+
+key: ALMotionProxy::changeTransform
+
+return void
+arg0 const std::string chainName
+arg1 const int space
+arg2 const std::vector<float> transform
+arg3 const float fractionMaxSpeed
+arg4 const int axisMask
+method changeTransform
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::updateTrackerTarget
+
+return void
+arg0 const float pTargetPositionWy
+arg1 const float pTargetPositionWz
+arg2 const int pTimeSinceDetectionMs
+arg3 const bool pUseOfWholeBody
+method updateTrackerTarget
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::getAngles
+
+return std::vector<float>
+arg0 const AL::ALValue names
+arg1 const bool useSensors
+method getAngles
+
+framework MOTION
+class ALMotionProxy
+key: ALBehaviorManagerProxy::isBehaviorRunning
+
+arg0 const std::string name
+framework CORE
+return bool
+class ALBehaviorManagerProxy
+method isBehaviorRunning
+
+key: ALVideoDeviceProxy::getCameraParameter
+
+return int
+arg0 const std::string Name
+arg1 const int Id
+method getCameraParameter
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::setSmartStiffnessEnabled
+
+arg0 const bool enable
+framework MOTION
+return bool
+class ALMotionProxy
+method setSmartStiffnessEnabled
+
+key: ALAudioDeviceProxy::getParameter
+
+arg0 const std::string parameter
+framework AUDIO
+return int
+class ALAudioDeviceProxy
+method getParameter
+
+key: DCMProxy::special
+
+arg0 const std::string result
+framework SENSORS
+return void
+class DCMProxy
+method special
+
+key: ALVideoDeviceProxy::setResolutions
+
+return AL::ALValue
+arg0 const std::string Name
+arg1 const AL::ALValue Resolutions
+method setResolutions
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::getFootSteps
+
+arg0 
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getFootSteps
+
+key: ALVisualCompassProxy::enableReferenceRefresh
+
+arg0 const bool refresh
+framework VISION
+return void
+class ALVisualCompassProxy
+method enableReferenceRefresh
+
+key: ALMotionProxy::setCollisionProtectionEnabled
+
+return bool
+arg0 const std::string pChainName
+arg1 const bool pEnable
+method setCollisionProtectionEnabled
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::killTask
+
+arg0 const int motionTaskID
+framework MOTION
+return bool
+class ALMotionProxy
+method killTask
+
+key: ALVideoDeviceProxy::setActiveCameras
+
+return AL::ALValue
+arg0 const std::string Name
+arg1 const AL::ALValue ActiveCameras
+method setActiveCameras
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::walkInit
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method walkInit
+
+key: ALVideoDeviceProxy::getAngularPositionFromImagePosition
+
+return std::vector<float>
+arg0 const int CameraIndex
+arg1 const std::vector<float> ImagePosition
+method getAngularPositionFromImagePosition
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALAudioPlayerProxy::getMasterVolume
+
+arg0 
+framework AUDIO
+return float
+class ALAudioPlayerProxy
+method getMasterVolume
+
+key: ALMemoryProxy::subscribeToMicroEvent
+
+return void
+arg0 const std::string name
+arg1 const std::string callbackModule
+arg2 const std::string callbackMessage
+arg3 const std::string callbackMethod
+method subscribeToMicroEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALPhotoCaptureProxy::getColorSpace
+
+arg0 
+framework VISION
+return int
+class ALPhotoCaptureProxy
+method getColorSpace
+
+key: ALMemoryProxy::insertListData
+
+arg0 const AL::ALValue list
+framework CORE
+return void
+class ALMemoryProxy
+method insertListData
+
+key: ALVideoDeviceProxy::setColorSpaces
+
+return AL::ALValue
+arg0 const std::string Name
+arg1 const AL::ALValue ColorSpaces
+method setColorSpaces
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::wbEnableBalanceConstraint
+
+return void
+arg0 const bool isEnable
+arg1 const std::string supportLeg
+method wbEnableBalanceConstraint
+
+framework MOTION
+class ALMotionProxy
+key: ALLoggerProxy::removeHandler
+
+arg0 const std::string name
+framework CORE
+return void
+class ALLoggerProxy
+method removeHandler
+
+key: ALMemoryProxy::getSubscribers
+
+arg0 const std::string name
+framework CORE
+return std::vector<std::string>
+class ALMemoryProxy
+method getSubscribers
+
+key: ALBehaviorManagerProxy::installBehavior
+
+arg0 const std::string localPath
+framework CORE
+return bool
+class ALBehaviorManagerProxy
+method installBehavior
+
+key: ALVideoDeviceProxy::getGVMResolution
+
+arg0 const std::string id
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getGVMResolution
+
+key: ALTextToSpeechProxy::getAvailableVoices
+
+arg0 
+framework AUDIO
+return std::vector<std::string>
+class ALTextToSpeechProxy
+method getAvailableVoices
+
+key: ALFaceDetectionProxy::enableRecognition
+
+arg0 const bool enable
+framework VISION
+return void
+class ALFaceDetectionProxy
+method enableRecognition
+
+key: ALSpeechRecognitionProxy::getLanguage
+
+arg0 
+framework AUDIO
+return std::string
+class ALSpeechRecognitionProxy
+method getLanguage
+
+key: ALVisionToolboxProxy::backlighting
+
+arg0 
+framework VISION
+return int
+class ALVisionToolboxProxy
+method backlighting
+
+key: ALResourceManagerProxy::areResourcesOwnedBy
+
+return bool
+arg0 const std::vector<std::string> resourceNameList
+arg1 const std::string ownerName
+method areResourcesOwnedBy
+
+framework CORE
+class ALResourceManagerProxy
+key: ALConnectionManagerProxy::disableTethering
+
+arg0 const std::string technology
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method disableTethering
+
+key: ALBehaviorManagerProxy::getRunningBehaviors
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALBehaviorManagerProxy
+method getRunningBehaviors
+
+key: ALVideoDeviceProxy::onClientDisconnected
+
+return void
+arg0 const std::string eventName
+arg1 const AL::ALValue eventContents
+arg2 const std::string message
+method onClientDisconnected
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::getPosition
+
+return std::vector<float>
+arg0 const std::string name
+arg1 const int space
+arg2 const bool useSensorValues
+method getPosition
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::getRobotVelocity
+
+arg0 
+framework MOTION
+return std::vector<float>
+class ALMotionProxy
+method getRobotVelocity
+
+key: ALMotionProxy::wbGoToBalance
+
+return void
+arg0 const std::string supportLeg
+arg1 const float duration
+method wbGoToBalance
+
+framework MOTION
+class ALMotionProxy
+key: ALResourceManagerProxy::releaseResources
+
+return void
+arg0 const std::vector<std::string> resourceNames
+arg1 const std::string ownerName
+method releaseResources
+
+framework CORE
+class ALResourceManagerProxy
+key: ALDarknessDetectionProxy::setDarknessThreshold
+
+arg0 const int threshold
+framework VISION
+return void
+class ALDarknessDetectionProxy
+method setDarknessThreshold
+
+key: ALVisionExtractor::isPaused
+
+arg0 
+framework CORE
+return bool
+class ALVisionExtractor
+method isPaused
+
+key: DCMProxy::getPrefix
+
+arg0 
+framework SENSORS
+return AL::ALValue
+class DCMProxy
+method getPrefix
+
+key: ALMotionProxy::transformInterpolation
+
+return void
+arg0 const std::string chainName
+arg1 const int space
+arg2 const AL::ALValue path
+arg3 const int axisMask
+arg4 const AL::ALValue duration
+arg5 const bool isAbsolute
+method transformInterpolation
+
+framework MOTION
+class ALMotionProxy
+key: ALVideoDeviceProxy::getImagesLocal
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getImagesLocal
+
+key: ALMotionProxy::getSmartStiffnessEnabled
+
+arg0 const bool enable
+framework MOTION
+return bool
+class ALMotionProxy
+method getSmartStiffnessEnabled
+
+key: ALLeds::setIntensity
+
+return void
+arg0 const std::string name
+arg1 const float intensity
+method setIntensity
+
+framework SENSORS
+class ALLeds
+key: ALAudioDeviceProxy::closeAudioOutputs
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method closeAudioOutputs
+
+key: ALLeds::getIntensity
+
+arg0 const std::string name
+framework SENSORS
+return AL::ALValue
+class ALLeds
+method getIntensity
+
+key: ALFaceTrackerProxy::startTracker
+
+arg0 
+framework TRACKERS
+return void
+class ALFaceTrackerProxy
+method startTracker
+
+key: ALVideoDeviceProxy::getDirectRawImagesRemote
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getDirectRawImagesRemote
+
+key: ALMotionRecorder::stopAndGetRecording
+
+arg0 
+framework MOTION
+return AL::ALValue
+class ALMotionRecorder
+method stopAndGetRecording
+
+key: ALMotionProxy::isCollision
+
+arg0 const std::string pChainName
+framework MOTION
+return std::string
+class ALMotionProxy
+method isCollision
+
+key: ALAudioDeviceProxy::stopMicrophonesRecording
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method stopMicrophonesRecording
+
+key: ALFaceTrackerProxy::getPosition
+
+arg0 
+framework TRACKERS
+return std::vector<float>
+class ALFaceTrackerProxy
+method getPosition
+
+key: ALMemoryProxy::insertData
+
+return void
+arg0 const std::string key
+arg1 const AL::ALValue data
+method insertData
+
+framework CORE
+class ALMemoryProxy
+key: ALResourceManagerProxy::enableStateResource
+
+return void
+arg0 const std::string resourceName
+arg1 const bool enabled
+method enableStateResource
+
+framework CORE
+class ALResourceManagerProxy
+key: ALAudioPlayerProxy::playFileFromPosition
+
+return void
+arg0 const std::string fileName
+arg1 const float position
+arg2 const float volume
+arg3 const float pan
+method playFileFromPosition
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALBehaviorManagerProxy::getDefaultBehaviors
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALBehaviorManagerProxy
+method getDefaultBehaviors
+
+key: ALBehaviorManagerProxy::addDefaultBehavior
+
+arg0 const std::string prefixedBehavior
+framework CORE
+return void
+class ALBehaviorManagerProxy
+method addDefaultBehavior
+
+key: ALModule::version
+
+arg0 
+framework CORE
+return std::string
+class ALModule
+method version
+
+key: ALVideoRecorderProxy::setColorSpace
+
+arg0 const int colorSpace
+framework VISION
+return void
+class ALVideoRecorderProxy
+method setColorSpace
+
+key: ALVideoRecorderProxy::isRecording
+
+arg0 
+framework VISION
+return bool
+class ALVideoRecorderProxy
+method isRecording
+
+key: ALAudioDeviceProxy::sendLocalBufferToOutput
+
+return bool
+arg0 const int nbOfFrames
+arg1 const int buffer
+method sendLocalBufferToOutput
+
+framework AUDIO
+class ALAudioDeviceProxy
+key: ALSpeechRecognitionProxy::setVisualExpression
+
+arg0 const bool setOrNot
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method setVisualExpression
+
+key: ALConnectionManagerProxy::connect
+
+arg0 const std::string serviceId
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method connect
+
+key: ALLeds::createGroup
+
+return void
+arg0 const std::string groupName
+arg1 const std::vector<std::string> ledNames
+method createGroup
+
+framework SENSORS
+class ALLeds
+key: ALPreferencesProxy::readPrefFile
+
+return AL::ALValue
+arg0 const std::string fileName
+arg1 const bool autoGenerateMemoryNames
+method readPrefFile
+
+framework CORE
+class ALPreferencesProxy
+key: ALFaceTrackerProxy::isActive
+
+arg0 
+framework TRACKERS
+return bool
+class ALFaceTrackerProxy
+method isActive
+
+key: ALVideoDeviceProxy::recordVideo
+
+return bool
+arg0 const std::string Name
+arg1 const std::string Path
+arg2 const int TotalNumber
+arg3 const int Period
+method recordVideo
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALSpeechRecognitionProxy::getPhoneticTranscription
+
+arg0 const std::string word
+framework AUDIO
+return std::vector<std::string>
+class ALSpeechRecognitionProxy
+method getPhoneticTranscription
+
+key: ALAudioPlayerProxy::playFileInLoop
+
+return void
+arg0 const std::string fileName
+arg1 const float volume
+arg2 const float pan
+method playFileInLoop
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALConnectionManagerProxy::technologies
+
+arg0 
+framework CONNECTIONMANAGER
+return AL::ALValue
+class ALConnectionManagerProxy
+method technologies
+
+key: ALTextToSpeechProxy::say
+
+arg0 const std::string stringToSay
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method say
+
+key: ALResourceManagerProxy::isInGroup
+
+return bool
+arg0 const std::string resourceGroupName
+arg1 const std::string resourceName
+method isInGroup
+
+framework CORE
+class ALResourceManagerProxy
+key: DCMProxy::setAlias
+
+arg0 const AL::ALValue commands
+framework SENSORS
+return void
+class DCMProxy
+method setAlias
+
+key: ALBehaviorManagerProxy::isBehaviorPresent
+
+arg0 const std::string prefixedBehavior
+framework CORE
+return bool
+class ALBehaviorManagerProxy
+method isBehaviorPresent
+
+key: ALTextToSpeechProxy::setLanguage
+
+arg0 const std::string language
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method setLanguage
+
+key: ALAudioDeviceProxy::openAudioOutputs
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method openAudioOutputs
+
+key: ALVisionToolboxProxy::isVideoRecording
+
+arg0 
+framework VISION
+return bool
+class ALVisionToolboxProxy
+method isVideoRecording
+
+key: ALRobotPosture::stopMove
+
+arg0 
+framework MOTION
+return void
+class ALRobotPosture
+method stopMove
+
+key: ALBehaviorManagerProxy::getUserBehaviorNames
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALBehaviorManagerProxy
+method getUserBehaviorNames
+
+key: ALVisionExtractor::getResolution
+
+arg0 
+framework CORE
+return int
+class ALVisionExtractor
+method getResolution
+
+key: ALAudioDeviceProxy::setClientPreferences
+
+return void
+arg0 const std::string name
+arg1 const int sampleRate
+arg2 const int channels
+arg3 const int deinterleaved
+method setClientPreferences
+
+framework AUDIO
+class ALAudioDeviceProxy
+key: ALTextToSpeechProxy::stopAll
+
+arg0 
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method stopAll
+
+key: ALVideoDeviceProxy::releaseImage
+
+arg0 const std::string Name
+framework VISION
+return bool
+class ALVideoDeviceProxy
+method releaseImage
+
+key: ALAudioDeviceProxy::setFileAsInput
+
+arg0 const std::string fileName
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method setFileAsInput
+
+key: ALPhotoCaptureProxy::setColorSpace
+
+arg0 const int colorSpace
+framework VISION
+return void
+class ALPhotoCaptureProxy
+method setColorSpace
+
+key: ALResourceManagerProxy::releaseResource
+
+return void
+arg0 const std::string resourceName
+arg1 const std::string ownerName
+method releaseResource
+
+framework CORE
+class ALResourceManagerProxy
+key: DCMProxy::preferences
+
+return int
+arg0 const std::string action
+arg1 const std::string target
+arg2 const std::string keyName
+arg3 const AL::ALValue keyValue
+method preferences
+
+framework SENSORS
+class DCMProxy
+key: ALVideoDeviceProxy::getImageInfoFromAngularInfoWithResolution
+
+return std::vector<float>
+arg0 const int CameraIndex
+arg1 const std::vector<float> AngularInfo
+arg2 const int ResolutionIndex
+method getImageInfoFromAngularInfoWithResolution
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALConnectionManagerProxy::tetheringPassphrase
+
+arg0 const std::string technology
+framework CONNECTIONMANAGER
+return std::string
+class ALConnectionManagerProxy
+method tetheringPassphrase
+
+key: ALLoggerProxy::info
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method info
+
+framework CORE
+class ALLoggerProxy
+key: ALMotionProxy::getJointNames
+
+arg0 const std::string name
+framework MOTION
+return std::vector<std::string>
+class ALMotionProxy
+method getJointNames
+
+key: ALVideoDeviceProxy::resolutionToSizes
+
+arg0 const int Resolution
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method resolutionToSizes
+
+key: ALRobotPosture::getPostureFamily
+
+arg0 
+framework MOTION
+return std::string
+class ALRobotPosture
+method getPostureFamily
+
+key: ALVideoDeviceProxy::subscribe
+
+return std::string
+arg0 const std::string Name
+arg1 const int resolution
+arg2 const int colorSpace
+arg3 const int fps
+method subscribe
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALResourceManagerProxy::waitForLocalResources
+
+return void
+arg0 const std::vector<std::string> resourceNameList
+arg1 const boost::shared_ptr<AL::ALOwner> owner
+arg2 const std::string callbackName
+arg3 const int timeoutSeconds
+method waitForLocalResources
+
+framework CORE
+class ALResourceManagerProxy
+key: ALMotionProxy::setFootStepsWithSpeed
+
+return void
+arg0 const std::vector<std::string> legName
+arg1 const AL::ALValue footSteps
+arg2 const std::vector<float> fractionMaxSpeed
+arg3 const bool clearExisting
+method setFootStepsWithSpeed
+
+framework MOTION
+class ALMotionProxy
+key: ALMemoryProxy::getMicroEventList
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALMemoryProxy
+method getMicroEventList
+
+key: ALVideoDeviceProxy::getImageLocal
+
+arg0 const std::string Name
+framework VISION
+return AL::ALImage*
+class ALVideoDeviceProxy
+method getImageLocal
+
+key: ALLaserProxy::setDetectingLength
+
+return void
+arg0 const int length_min_l
+arg1 const int length_max_l
+method setDetectingLength
+
+framework SENSORS
+class ALLaserProxy
+key: ALSensorsProxy::subscribe
+
+arg0 const std::string name
+framework SENSORS
+return void
+class ALSensorsProxy
+method subscribe
+
+key: ALTextToSpeechProxy::getAvailableLanguages
+
+arg0 
+framework AUDIO
+return std::vector<std::string>
+class ALTextToSpeechProxy
+method getAvailableLanguages
+
+key: ALTextToSpeechProxy::setVolume
+
+arg0 const float volume
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method setVolume
+
+key: ALConnectionManagerProxy::service
+
+arg0 const std::string serviceId
+framework CONNECTIONMANAGER
+return AL::ALValue
+class ALConnectionManagerProxy
+method service
+
+key: ALResourceManagerProxy::waitForResource
+
+return void
+arg0 const std::string resourceName
+arg1 const std::string ownerName
+arg2 const std::string callbackName
+arg3 const int timeoutSeconds
+method waitForResource
+
+framework CORE
+class ALResourceManagerProxy
+key: ALAudioDeviceProxy::subscribe
+
+arg0 const std::string module
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method subscribe
+
+key: ALVisionExtractor::setResolution
+
+arg0 const int resolution
+framework CORE
+return bool
+class ALVisionExtractor
+method setResolution
+
+key: ALAudioSourceLocalizationProxy::setParameter
+
+return void
+arg0 const std::string parameter
+arg1 const AL::ALValue value
+method setParameter
+
+framework AUDIO
+class ALAudioSourceLocalizationProxy
+key: ALVideoDeviceProxy::getImagePositionFromAngularPosition
+
+return std::vector<float>
+arg0 const int CameraIndex
+arg1 const std::vector<float> AngularPosition
+method getImagePositionFromAngularPosition
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALExtractor::getCurrentPeriod
+
+arg0 
+framework CORE
+return int
+class ALExtractor
+method getCurrentPeriod
+
+key: ALModule::getModuleHelp
+
+arg0 
+framework CORE
+return AL::ALValue
+class ALModule
+method getModuleHelp
+
+key: ALRedBallTrackerProxy::getPosition
+
+arg0 
+framework TRACKERS
+return std::vector<float>
+class ALRedBallTrackerProxy
+method getPosition
+
+key: ALMotionProxy::getCollisionProtectionEnabled
+
+arg0 const std::string pChainName
+framework MOTION
+return bool
+class ALMotionProxy
+method getCollisionProtectionEnabled
+
+key: DCMProxy::getTime
+
+arg0 const int offset
+framework SENSORS
+return int
+class DCMProxy
+method getTime
+
+key: ALVisionToolboxProxy::setWhiteBalance
+
+arg0 const int camera
+framework VISION
+return void
+class ALVisionToolboxProxy
+method setWhiteBalance
+
+key: ALConnectionManagerProxy::getTetheringEnable
+
+arg0 const std::string technology
+framework CONNECTIONMANAGER
+return bool
+class ALConnectionManagerProxy
+method getTetheringEnable
+
+key: ALFaceTrackerProxy::isNewData
+
+arg0 
+framework TRACKERS
+return bool
+class ALFaceTrackerProxy
+method isNewData
+
+key: ALVideoDeviceProxy::getDirectRawImagesLocal
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getDirectRawImagesLocal
+
+key: ALLauncherProxy::launchExecutable
+
+arg0 const std::string name
+framework CORE
+return bool
+class ALLauncherProxy
+method launchExecutable
+
+key: ALSpeechRecognitionProxy::setWordListAsVocabulary
+
+arg0 const std::vector<std::string> vocabulary
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method setWordListAsVocabulary
+
+key: ALExtractor::updatePeriod
+
+return void
+arg0 const std::string pSubscribedName
+arg1 const int pPeriod
+method updatePeriod
+
+framework CORE
+class ALExtractor
+key: ALTextToSpeechProxy::getParameter
+
+arg0 const std::string parameter
+framework AUDIO
+return float
+class ALTextToSpeechProxy
+method getParameter
+
+key: ALExtractor::updatePrecision
+
+return void
+arg0 const std::string pSubscribedName
+arg1 const float pPrecision
+method updatePrecision
+
+framework CORE
+class ALExtractor
+key: ALExtractor::unsubscribe
+
+arg0 const std::string pSubscribedName
+framework CORE
+return void
+class ALExtractor
+method unsubscribe
+
+key: ALBehaviorManagerProxy::removeDefaultBehavior
+
+arg0 const std::string name
+framework CORE
+return void
+class ALBehaviorManagerProxy
+method removeDefaultBehavior
+
+key: ALLoggerProxy::setFilter
+
+arg0 
+framework CORE
+return void
+class ALLoggerProxy
+method setFilter
+
+key: ALAudioPlayerProxy::setPanorama
+
+arg0 const float pan
+framework AUDIO
+return void
+class ALAudioPlayerProxy
+method setPanorama
+
+key: ALBehaviorManagerProxy::getSystemBehaviorNames
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALBehaviorManagerProxy
+method getSystemBehaviorNames
+
+key: ALPreferencesProxy::writePrefFile
+
+return void
+arg0 const std::string fileName
+arg1 const AL::ALValue prefs
+arg2 const bool ignoreMemoryNames
+method writePrefFile
+
+framework CORE
+class ALPreferencesProxy
+key: ALMotionProxy::getLimits
+
+arg0 const std::string name
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getLimits
+
+key: ALAudioSourceLocalizationProxy::subscribe
+
+arg0 const std::string name
+framework AUDIO
+return void
+class ALAudioSourceLocalizationProxy
+method subscribe
+
+key: ALVideoRecorderProxy::getVideoFormat
+
+arg0 
+framework VISION
+return std::string
+class ALVideoRecorderProxy
+method getVideoFormat
+
+key: ALLoggerProxy::lowInfo
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method lowInfo
+
+framework CORE
+class ALLoggerProxy
+key: ALSoundDetection::unsubscribe
+
+arg0 const std::string name
+framework AUDIO
+return void
+class ALSoundDetection
+method unsubscribe
+
+key: ALMotionProxy::getMass
+
+arg0 const std::string pName
+framework MOTION
+return float
+class ALMotionProxy
+method getMass
+
+key: ALTextToSpeechProxy::enableNotifications
+
+arg0 
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method enableNotifications
+
+key: ALAudioDeviceProxy::getRightMicEnergy
+
+arg0 
+framework AUDIO
+return float
+class ALAudioDeviceProxy
+method getRightMicEnergy
+
+key: ALMotionProxy::getNextRobotPosition
+
+arg0 
+framework MOTION
+return std::vector<float>
+class ALMotionProxy
+method getNextRobotPosition
+
+key: ALAudioDeviceProxy::sendRemoteBufferToOutput
+
+return bool
+arg0 const int nbOfFrames
+arg1 const AL::ALValue buffer
+method sendRemoteBufferToOutput
+
+framework AUDIO
+class ALAudioDeviceProxy
+key: ALVideoRecorderProxy::getColorSpace
+
+arg0 
+framework VISION
+return int
+class ALVideoRecorderProxy
+method getColorSpace
+
+key: ALExtractor::getMyPeriod
+
+arg0 const std::string pSubscribedName
+framework CORE
+return int
+class ALExtractor
+method getMyPeriod
+
+key: ALAudioPlayerProxy::getLoadedFilesIds
+
+arg0 
+framework AUDIO
+return std::vector<std::string>
+class ALAudioPlayerProxy
+method getLoadedFilesIds
+
+key: ALAudioDeviceProxy::subscribeRemoteModule
+
+arg0 const std::string module
+framework AUDIO
+return bool
+class ALAudioDeviceProxy
+method subscribeRemoteModule
+
+key: ALMotionProxy::wakeUp
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method wakeUp
+
+key: ALBehaviorManagerProxy::getBehaviorNames
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALBehaviorManagerProxy
+method getBehaviorNames
+
+key: ALMotionProxy::setWalkTargetVelocity
+
+return void
+arg0 const float x
+arg1 const float y
+arg2 const float theta
+arg3 const float frequency
+arg4 const AL::ALValue leftFootGaitConfig
+arg5 const AL::ALValue rightFootGaitConfig
+method setWalkTargetVelocity
+
+framework MOTION
+class ALMotionProxy
+key: ALRedBallTrackerProxy::isActive
+
+arg0 
+framework TRACKERS
+return bool
+class ALRedBallTrackerProxy
+method isActive
+
+key: ALMotionProxy::getFallManagerEnabled
+
+arg0 
+framework MOTION
+return bool
+class ALMotionProxy
+method getFallManagerEnabled
+
+key: ALConnectionManagerProxy::setServiceInput
+
+arg0 const AL::ALValue input
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method setServiceInput
+
+key: ALLoggerProxy::debug
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method debug
+
+framework CORE
+class ALLoggerProxy
+key: ALRedBallTrackerProxy::stopTracker
+
+arg0 
+framework TRACKERS
+return void
+class ALRedBallTrackerProxy
+method stopTracker
+
+key: ALRobotPoseProxy::getPoseNames
+
+arg0 
+framework SENSORS
+return AL::ALValue
+class ALRobotPoseProxy
+method getPoseNames
+
+key: ALAudioPlayerProxy::getVolume
+
+arg0 const int taskId
+framework AUDIO
+return float
+class ALAudioPlayerProxy
+method getVolume
+
+key: ALMemoryProxy::getEventHistory
+
+arg0 const std::string pName
+framework CORE
+return AL::ALValue
+class ALMemoryProxy
+method getEventHistory
+
+key: ALModule::ping
+
+arg0 
+framework CORE
+return bool
+class ALModule
+method ping
+
+key: ALNavigationProxy::setSecurityDistance
+
+arg0 const float distance
+framework MOTION
+return void
+class ALNavigationProxy
+method setSecurityDistance
+
+key: ALSensorsProxy::updatePeriod
+
+return void
+arg0 const std::string name
+arg1 const int period
+method updatePeriod
+
+framework SENSORS
+class ALSensorsProxy
+key: ALLauncherProxy::launchScript
+
+arg0 const std::string scriptPath
+framework CORE
+return bool
+class ALLauncherProxy
+method launchScript
+
+key: ALMotionProxy::getTransform
+
+return std::vector<float>
+arg0 const std::string name
+arg1 const int space
+arg2 const bool useSensorValues
+method getTransform
+
+framework MOTION
+class ALMotionProxy
+key: ALSoundDetection::subscribe
+
+arg0 const std::string name
+framework AUDIO
+return void
+class ALSoundDetection
+method subscribe
+
+key: ALVisionExtractor::setActiveCamera
+
+arg0 const int cameraId
+framework CORE
+return bool
+class ALVisionExtractor
+method setActiveCamera
+
+key: ALBehaviorManagerProxy::stopAllBehaviors
+
+arg0 
+framework CORE
+return void
+class ALBehaviorManagerProxy
+method stopAllBehaviors
+
+key: ALBehaviorManagerProxy::isBehaviorInstalled
+
+arg0 const std::string name
+framework CORE
+return bool
+class ALBehaviorManagerProxy
+method isBehaviorInstalled
+
+key: ALLoggerProxy::error
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method error
+
+framework CORE
+class ALLoggerProxy
+key: ALMotionProxy::stopWalk
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method stopWalk
+
+key: ALResourceManagerProxy::getDataList
+
+arg0 const std::string filter
+framework CORE
+return void
+class ALResourceManagerProxy
+method getDataList
+
+key: ALRedBallTrackerProxy::isNewData
+
+arg0 
+framework TRACKERS
+return bool
+class ALRedBallTrackerProxy
+method isNewData
+
+key: ALMotionProxy::changePosition
+
+return void
+arg0 const std::string effectorName
+arg1 const int space
+arg2 const std::vector<float> positionChange
+arg3 const float fractionMaxSpeed
+arg4 const int axisMask
+method changePosition
+
+framework MOTION
+class ALMotionProxy
+key: ALTextToSpeechProxy::getVoice
+
+arg0 
+framework AUDIO
+return std::string
+class ALTextToSpeechProxy
+method getVoice
+
+key: ALSensorsProxy::updatePrecision
+
+return void
+arg0 const std::string name
+arg1 const float precision
+method updatePrecision
+
+framework SENSORS
+class ALSensorsProxy
+key: ALLaserProxy::laserON
+
+arg0 
+framework SENSORS
+return void
+class ALLaserProxy
+method laserON
+
+key: ALAudioPlayerProxy::getLoadedFilesNames
+
+arg0 
+framework AUDIO
+return std::vector<std::string>
+class ALAudioPlayerProxy
+method getLoadedFilesNames
+
+key: ALBehaviorManagerProxy::getInstalledBehaviors
+
+arg0 
+framework CORE
+return std::vector<std::string>
+class ALBehaviorManagerProxy
+method getInstalledBehaviors
+
+key: ALVideoDeviceProxy::getCameraModelID
+
+arg0 
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getCameraModelID
+
+key: ALAudioPlayerProxy::getFileLength
+
+arg0 const int taskId
+framework AUDIO
+return float
+class ALAudioPlayerProxy
+method getFileLength
+
+key: ALVideoDeviceProxy::isFrameGrabberOff
+
+arg0 
+framework VISION
+return int
+class ALVideoDeviceProxy
+method isFrameGrabberOff
+
+key: ALFaceDetectionProxy::learnFace
+
+arg0 const std::string name
+framework VISION
+return bool
+class ALFaceDetectionProxy
+method learnFace
+
+key: ALMotionProxy::walkIsActive
+
+arg0 
+framework MOTION
+return bool
+class ALMotionProxy
+method walkIsActive
+
+key: ALRedBallTrackerProxy::startTracker
+
+arg0 
+framework TRACKERS
+return void
+class ALRedBallTrackerProxy
+method startTracker
+
+key: ALRobotPoseProxy::getActualPoseAndTime
+
+arg0 
+framework SENSORS
+return AL::ALValue
+class ALRobotPoseProxy
+method getActualPoseAndTime
+
+key: ALVideoDeviceProxy::setCamerasParameter
+
+return AL::ALValue
+arg0 const std::string Name
+arg1 const int Id
+arg2 const AL::ALValue NewValue
+method setCamerasParameter
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::killWalk
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method killWalk
+
+key: ALLoggerProxy::logInStd
+
+arg0 
+framework CORE
+return void
+class ALLoggerProxy
+method logInStd
+
+key: ALPhotoCaptureProxy::takePictures
+
+return AL::ALValue
+arg0 const int numberOfPictures
+arg1 const std::string folderPath
+arg2 const std::string fileName
+arg3 const bool overwrite
+method takePictures
+
+framework VISION
+class ALPhotoCaptureProxy
+key: ALVisionToolboxProxy::stopTPR
+
+return void
+arg0 const std::string pathAndNameRoot
+arg1 const std::string imageRecordFormat
+method stopTPR
+
+framework VISION
+class ALVisionToolboxProxy
+key: ALVisionToolboxProxy::takePicture
+
+arg0 
+framework VISION
+return void
+class ALVisionToolboxProxy
+method takePicture
+
+key: ALModule::wait
+
+return bool
+arg0 const int id
+arg1 const int timeout
+method wait
+
+framework CORE
+class ALModule
+key: ALLeds::fade
+
+return void
+arg0 const std::string name
+arg1 const float intensity
+arg2 const float duration
+method fade
+
+framework SENSORS
+class ALLeds
+key: ALConnectionManagerProxy::setServiceConfiguration
+
+arg0 const AL::ALValue configuration
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method setServiceConfiguration
+
+key: ALMemoryProxy::getExtractorEvent
+
+arg0 const std::string extractorName
+framework CORE
+return std::vector<std::string>
+class ALMemoryProxy
+method getExtractorEvent
+
+key: ALInfraredProxy::send32
+
+return void
+arg0 const int Octet1
+arg1 const int Octet2
+arg2 const int Octet3
+arg3 const int Octet4
+method send32
+
+framework SENSORS
+class ALInfraredProxy
+key: ALSpeechRecognitionProxy::setParameter
+
+return void
+arg0 const std::string parameter
+arg1 const float value
+method setParameter
+
+framework AUDIO
+class ALSpeechRecognitionProxy
+key: ALVideoDeviceProxy::getGVMFrameRate
+
+arg0 const std::string id
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getGVMFrameRate
+
+key: ALVisualCompassProxy::getMatchingQuality
+
+arg0 
+framework VISION
+return AL::ALValue
+class ALVisualCompassProxy
+method getMatchingQuality
+
+key: ALVideoDeviceProxy::unsubscribeAllInstances
+
+arg0 const std::string Name
+framework VISION
+return void
+class ALVideoDeviceProxy
+method unsubscribeAllInstances
+
+key: ALVideoDeviceProxy::putImage
+
+arg0 const AL::ALValue ImageBuffer
+framework VISION
+return bool
+class ALVideoDeviceProxy
+method putImage
+
+key: ALAudioRecorderProxy::stopMicrophonesRecording
+
+arg0 
+framework AUDIO
+return void
+class ALAudioRecorderProxy
+method stopMicrophonesRecording
+
+key: ALVideoDeviceProxy::setCameraParameter
+
+return bool
+arg0 const std::string Name
+arg1 const int Id
+arg2 const int NewValue
+method setCameraParameter
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALMotionProxy::killAll
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method killAll
+
+key: ALTextToSpeechProxy::disableNotifications
+
+arg0 
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method disableNotifications
+
+key: ALMotionProxy::moveInit
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method moveInit
+
+key: ALResourceManagerProxy::deleteResource
+
+return void
+arg0 const std::string resourceName
+arg1 const bool deleteChildResources
+method deleteResource
+
+framework CORE
+class ALResourceManagerProxy
+key: ALVideoRecorderProxy::stopRecording
+
+arg0 
+framework VISION
+return AL::ALValue
+class ALVideoRecorderProxy
+method stopRecording
+
+key: ALVideoDeviceProxy::getResolutions
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getResolutions
+
+key: ALVisionToolboxProxy::startVideoRecord
+
+arg0 const std::string videoName
+framework VISION
+return void
+class ALVisionToolboxProxy
+method startVideoRecord
+
+key: ALSoundDetection::getDescription
+
+return AL::ALValue
+arg0 const std::string type
+arg1 const std::string nameDesc
+method getDescription
+
+framework AUDIO
+class ALSoundDetection
+key: ALInfraredProxy::sendRemoteKey
+
+return void
+arg0 const std::string Remote
+arg1 const std::string Key
+method sendRemoteKey
+
+framework SENSORS
+class ALInfraredProxy
+key: ALBehaviorManagerProxy::removeBehavior
+
+arg0 const std::string name
+framework CORE
+return bool
+class ALBehaviorManagerProxy
+method removeBehavior
+
+key: ALAudioPlayerProxy::setMasterVolume
+
+arg0 const float volume
+framework AUDIO
+return void
+class ALAudioPlayerProxy
+method setMasterVolume
+
+key: ALVisionRecognitionProxy::setParam
+
+return void
+arg0 const std::string paramName
+arg1 const AL::ALValue paramValue
+method setParam
+
+framework VISION
+class ALVisionRecognitionProxy
+key: ALBehaviorManagerProxy::preloadBehavior
+
+arg0 const std::string name
+framework CORE
+return bool
+class ALBehaviorManagerProxy
+method preloadBehavior
+
+key: ALMemoryProxy::getDescriptionList
+
+arg0 const std::vector<std::string> keys
+framework CORE
+return AL::ALValue
+class ALMemoryProxy
+method getDescriptionList
+
+key: ALSensorsProxy::getMyPeriod
+
+arg0 const std::string name
+framework SENSORS
+return int
+class ALSensorsProxy
+method getMyPeriod
+
+key: ALMemoryProxy::unsubscribeToMicroEvent
+
+return void
+arg0 const std::string name
+arg1 const std::string callbackModule
+method unsubscribeToMicroEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALMemoryProxy::raiseEvent
+
+return void
+arg0 const std::string name
+arg1 const AL::ALValue value
+method raiseEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALAudioDeviceProxy::getFrontMicEnergy
+
+arg0 
+framework AUDIO
+return float
+class ALAudioDeviceProxy
+method getFrontMicEnergy
+
+key: ALRedBallTrackerProxy::setWholeBodyOn
+
+arg0 const bool wholeBodyOn
+framework TRACKERS
+return void
+class ALRedBallTrackerProxy
+method setWholeBodyOn
+
+key: ALMotionProxy::waitUntilWalkIsFinished
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method waitUntilWalkIsFinished
+
+key: ALSensorsProxy::run
+
+arg0 
+framework SENSORS
+return void
+class ALSensorsProxy
+method run
+
+key: ALSpeechRecognitionProxy::setLanguage
+
+arg0 const std::string language
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method setLanguage
+
+key: ALResourceManagerProxy::getData
+
+return void
+arg0 const std::string key
+arg1 const int deprecatedParameter
+method getData
+
+framework CORE
+class ALResourceManagerProxy
+key: ALMotionProxy::moveToward
+
+return void
+arg0 const float x
+arg1 const float y
+arg2 const float theta
+arg3 const AL::ALValue moveConfig
+method moveToward
+
+framework MOTION
+class ALMotionProxy
+key: ALAudioPlayerProxy::goTo
+
+return void
+arg0 const int taskId
+arg1 const float position
+method goTo
+
+framework AUDIO
+class ALAudioPlayerProxy
+key: ALSpeechRecognitionProxy::getAvailableLanguages
+
+arg0 
+framework AUDIO
+return std::vector<std::string>
+class ALSpeechRecognitionProxy
+method getAvailableLanguages
+
+key: ALMotionProxy::getSummary
+
+arg0 
+framework MOTION
+return std::string
+class ALMotionProxy
+method getSummary
+
+key: ALVisionToolboxProxy::stopVideoRecord
+
+arg0 
+framework VISION
+return AL::ALValue
+class ALVisionToolboxProxy
+method stopVideoRecord
+
+key: ALTextToSpeechProxy::setVoice
+
+arg0 const std::string voiceID
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method setVoice
+
+key: ALVideoDeviceProxy::setSimCamInputSize
+
+return bool
+arg0 const int Width
+arg1 const int Height
+method setSimCamInputSize
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALAudioDeviceProxy::unSubscribeRemoteModule
+
+arg0 const std::string module
+framework AUDIO
+return bool
+class ALAudioDeviceProxy
+method unSubscribeRemoteModule
+
+key: ALBehaviorManagerProxy::runBehavior
+
+arg0 const std::string name
+framework CORE
+return void
+class ALBehaviorManagerProxy
+method runBehavior
+
+key: ALVisionExtractor::getFrameRate
+
+arg0 
+framework CORE
+return int
+class ALVisionExtractor
+method getFrameRate
+
+key: ALMotionProxy::getTaskList
+
+arg0 
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getTaskList
+
+key: ALMotionProxy::wbEnableEffectorControl
+
+return void
+arg0 const std::string effectorName
+arg1 const bool isEnabled
+method wbEnableEffectorControl
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::getMoveConfig
+
+arg0 const std::string config
+framework MOTION
+return AL::ALValue
+class ALMotionProxy
+method getMoveConfig
+
+key: ALVisualCompassProxy::getReferenceImage
+
+arg0 
+framework VISION
+return AL::ALValue
+class ALVisualCompassProxy
+method getReferenceImage
+
+key: ALMemoryProxy::declareEvent
+
+return void
+arg0 const std::string eventName
+arg1 const std::string extractorName
+method declareEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALModule::stop
+
+arg0 const int id
+framework CORE
+return void
+class ALModule
+method stop
+
+key: ALTextToSpeechProxy::setParameter
+
+return void
+arg0 const std::string parameter
+arg1 const float value
+method setParameter
+
+framework AUDIO
+class ALTextToSpeechProxy
+key: ALSensorsProxy::getCurrentPeriod
+
+arg0 
+framework SENSORS
+return int
+class ALSensorsProxy
+method getCurrentPeriod
+
+key: ALMemoryProxy::getDataPtr
+
+arg0 const std::string key
+framework CORE
+return void*
+class ALMemoryProxy
+method getDataPtr
+
+key: ALMemoryProxy::removeData
+
+arg0 const std::string key
+framework CORE
+return void
+class ALMemoryProxy
+method removeData
+
+key: ALVisionExtractor::getActiveCamera
+
+arg0 
+framework CORE
+return int
+class ALVisionExtractor
+method getActiveCamera
+
+key: ALLeds::randomEyes
+
+arg0 const float duration
+framework SENSORS
+return void
+class ALLeds
+method randomEyes
+
+key: ALSensorsProxy::getCurrentPrecision
+
+arg0 
+framework SENSORS
+return float
+class ALSensorsProxy
+method getCurrentPrecision
+
+key: ALMotionProxy::setStiffnesses
+
+return void
+arg0 const AL::ALValue names
+arg1 const AL::ALValue stiffnesses
+method setStiffnesses
+
+framework MOTION
+class ALMotionProxy
+key: ALResourceManagerProxy::createResource
+
+return void
+arg0 const std::string resourceName
+arg1 const std::string parentResourceName
+method createResource
+
+framework CORE
+class ALResourceManagerProxy
+key: ALMovementDetectionProxy::setSensitivity
+
+arg0 const float sensitivity
+framework VISION
+return bool
+class ALMovementDetectionProxy
+method setSensitivity
+
+key: ALTextToSpeechProxy::loadVoicePreference
+
+arg0 const std::string preferencesFileSuffix
+framework AUDIO
+return void
+class ALTextToSpeechProxy
+method loadVoicePreference
+
+key: ALMotionProxy::setMotionConfig
+
+arg0 const AL::ALValue config
+framework MOTION
+return void
+class ALMotionProxy
+method setMotionConfig
+
+key: ALVideoDeviceProxy::setCameraParameterToDefault
+
+return bool
+arg0 const std::string Name
+arg1 const int Id
+method setCameraParameterToDefault
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALSpeechRecognitionProxy::getParameter
+
+arg0 const std::string parameter
+framework AUDIO
+return float
+class ALSpeechRecognitionProxy
+method getParameter
+
+key: ALLeds::listLED
+
+arg0 const std::string arg1
+framework SENSORS
+return std::vector<std::string>
+class ALLeds
+method listLED
+
+key: ALMotionProxy::walkTo
+
+return void
+arg0 const AL::ALValue controlPoints
+arg1 const AL::ALValue feetGaitConfig
+method walkTo
+
+framework MOTION
+class ALMotionProxy
+key: ALMemoryProxy::unsubscribeToEvent
+
+return void
+arg0 const std::string name
+arg1 const std::string callbackModule
+method unsubscribeToEvent
+
+framework CORE
+class ALMemoryProxy
+key: ALConnectionManagerProxy::enableTethering
+
+return void
+arg0 const std::string technology
+arg1 const std::string name
+arg2 const std::string passphrase
+method enableTethering
+
+framework CONNECTIONMANAGER
+class ALConnectionManagerProxy
+key: ALInfraredProxy::send8
+
+arg0 const int Octet
+framework SENSORS
+return void
+class ALInfraredProxy
+method send8
+
+key: ALVideoDeviceProxy::getVIMFrameRate
+
+arg0 
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getVIMFrameRate
+
+key: ALVideoRecorderProxy::setResolution
+
+arg0 const int resolution
+framework VISION
+return void
+class ALVideoRecorderProxy
+method setResolution
+
+key: ALMemoryProxy::getType
+
+arg0 const std::string key
+framework CORE
+return std::string
+class ALMemoryProxy
+method getType
+
+key: ALTextToSpeechProxy::sayToFile
+
+return void
+arg0 const std::string stringToSay
+arg1 const std::string fileName
+method sayToFile
+
+framework AUDIO
+class ALTextToSpeechProxy
+key: ALMovementDetectionProxy::getSensitivity
+
+arg0 const float sensitivity
+framework VISION
+return void
+class ALMovementDetectionProxy
+method getSensitivity
+
+key: ALFaceDetectionProxy::forgetPerson
+
+arg0 const std::string name
+framework VISION
+return bool
+class ALFaceDetectionProxy
+method forgetPerson
+
+key: ALAudioDeviceProxy::getOutputVolume
+
+arg0 
+framework AUDIO
+return int
+class ALAudioDeviceProxy
+method getOutputVolume
+
+key: ALAudioDeviceProxy::getRearMicEnergy
+
+arg0 
+framework AUDIO
+return float
+class ALAudioDeviceProxy
+method getRearMicEnergy
+
+key: ALLeds::fadeRGB
+
+return void
+arg0 const std::string name
+arg1 const int rgb
+arg2 const float duration
+method fadeRGB
+
+framework SENSORS
+class ALLeds
+key: ALMemoryProxy::getListData
+
+arg0 const AL::ALValue keyList
+framework CORE
+return AL::ALValue
+class ALMemoryProxy
+method getListData
+
+key: ALPhotoCaptureProxy::setCaptureInterval
+
+arg0 const int captureInterval
+framework VISION
+return void
+class ALPhotoCaptureProxy
+method setCaptureInterval
+
+key: ALVideoDeviceProxy::getDirectRawImageRemote
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getDirectRawImageRemote
+
+key: ALVisionExtractor::pause
+
+arg0 const bool paused
+framework CORE
+return void
+class ALVisionExtractor
+method pause
+
+key: ALConnectionManagerProxy::scan
+
+arg0 const std::string technology
+framework CONNECTIONMANAGER
+return void
+class ALConnectionManagerProxy
+method scan
+
+key: ALAudioRecorderProxy::startMicrophonesRecording
+
+return void
+arg0 const std::string filename
+arg1 const std::string type
+arg2 const int samplerate
+arg3 const AL::ALValue channels
+method startMicrophonesRecording
+
+framework AUDIO
+class ALAudioRecorderProxy
+key: ALAudioPlayerProxy::pause
+
+arg0 const int taskId
+framework AUDIO
+return void
+class ALAudioPlayerProxy
+method pause
+
+key: ALMotionProxy::transformInterpolations
+
+return void
+arg0 const std::vector<std::string> effectorNames
+arg1 const int taskSpaceForAllPaths
+arg2 const AL::ALValue paths
+arg3 const AL::ALValue axisMasks
+arg4 const AL::ALValue relativeTimes
+arg5 const bool isAbsolute
+method transformInterpolations
+
+framework MOTION
+class ALMotionProxy
+key: ALMotionProxy::setFootSteps
+
+return void
+arg0 const std::vector<std::string> legName
+arg1 const AL::ALValue footSteps
+arg2 const std::vector<float> timeList
+arg3 const bool clearExisting
+method setFootSteps
+
+framework MOTION
+class ALMotionProxy
+key: ALVideoDeviceProxy::getAngPosFromImgPos
+
+arg0 const std::vector<float> imgPos
+framework VISION
+return std::vector<float>
+class ALVideoDeviceProxy
+method getAngPosFromImgPos
+
+key: ALAudioDeviceProxy::closeAudioInputs
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method closeAudioInputs
+
+key: ALFaceTrackerProxy::stopTracker
+
+arg0 
+framework TRACKERS
+return void
+class ALFaceTrackerProxy
+method stopTracker
+
+key: ALSoundDetection::setParameter
+
+return void
+arg0 const std::string type
+arg1 const std::string parameter
+arg2 const float value
+method setParameter
+
+framework AUDIO
+class ALSoundDetection
+key: ALModule::getUsage
+
+arg0 const std::string methodName
+framework CORE
+return std::string
+class ALModule
+method getUsage
+
+key: ALExtractor::getSubscribersInfo
+
+arg0 
+framework CORE
+return AL::ALValue
+class ALExtractor
+method getSubscribersInfo
+
+key: ALSpeechRecognitionProxy::setAudioExpression
+
+arg0 const bool setOrNot
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method setAudioExpression
+
+key: ALPhotoCaptureProxy::getCaptureInterval
+
+arg0 
+framework VISION
+return int
+class ALPhotoCaptureProxy
+method getCaptureInterval
+
+key: ALFaceDetectionProxy::enableTracking
+
+arg0 const bool enable
+framework VISION
+return void
+class ALFaceDetectionProxy
+method enableTracking
+
+key: ALVideoDeviceProxy::getActiveCameras
+
+arg0 const std::string Name
+framework VISION
+return AL::ALValue
+class ALVideoDeviceProxy
+method getActiveCameras
+
+key: ALMotionProxy::wbEnableEffectorOptimization
+
+return void
+arg0 const std::string effectorName
+arg1 const bool isEnabled
+method wbEnableEffectorOptimization
+
+framework MOTION
+class ALMotionProxy
+key: ALModule::getBrokerName
+
+arg0 
+framework CORE
+return std::string
+class ALModule
+method getBrokerName
+
+key: ALLeds::on
+
+arg0 const std::string name
+framework SENSORS
+return void
+class ALLeds
+method on
+
+key: ALVideoDeviceProxy::startFrameGrabber
+
+arg0 
+framework VISION
+return bool
+class ALVideoDeviceProxy
+method startFrameGrabber
+
+key: ALMotionProxy::rest
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method rest
+
+key: ALMotionProxy::closeHand
+
+arg0 const std::string handName
+framework MOTION
+return void
+class ALMotionProxy
+method closeHand
+
+key: ALModule::isRunning
+
+arg0 const int id
+framework CORE
+return bool
+class ALModule
+method isRunning
+
+key: ALVideoDeviceProxy::getImageSizeFromAngularSize
+
+return std::vector<float>
+arg0 const int CameraIndex
+arg1 const std::vector<float> AngularSize
+method getImageSizeFromAngularSize
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALLeds::rasta
+
+arg0 const float duration
+framework SENSORS
+return void
+class ALLeds
+method rasta
+
+key: ALVideoDeviceProxy::getResolution
+
+arg0 const std::string Name
+framework VISION
+return int
+class ALVideoDeviceProxy
+method getResolution
+
+key: ALLoggerProxy::logInForwarder
+
+arg0 const std::string inputAddress
+framework CORE
+return void
+class ALLoggerProxy
+method logInForwarder
+
+key: ALModule::getMethodHelp
+
+arg0 const std::string methodName
+framework CORE
+return AL::ALValue
+class ALModule
+method getMethodHelp
+
+key: ALMotionProxy::getBodyNames
+
+arg0 const std::string name
+framework MOTION
+return std::vector<std::string>
+class ALMotionProxy
+method getBodyNames
+
+key: ALMotionProxy::positionInterpolation
+
+return void
+arg0 const std::string chainName
+arg1 const int space
+arg2 const AL::ALValue path
+arg3 const int axisMask
+arg4 const AL::ALValue durations
+arg5 const bool isAbsolute
+method positionInterpolation
+
+framework MOTION
+class ALMotionProxy
+key: ALConnectionManagerProxy::services
+
+arg0 
+framework CONNECTIONMANAGER
+return AL::ALValue
+class ALConnectionManagerProxy
+method services
+
+key: ALModule::exit
+
+arg0 
+framework CORE
+return void
+class ALModule
+method exit
+
+key: DCMProxy::createAlias
+
+arg0 const AL::ALValue alias
+framework SENSORS
+return AL::ALValue
+class DCMProxy
+method createAlias
+
+key: ALVisionToolboxProxy::halfPress
+
+arg0 
+framework VISION
+return void
+class ALVisionToolboxProxy
+method halfPress
+
+key: ALVideoDeviceProxy::getImageInfoFromAngularInfo
+
+return std::vector<float>
+arg0 const int CameraIndex
+arg1 const std::vector<float> AngularInfo
+method getImageInfoFromAngularInfo
+
+framework VISION
+class ALVideoDeviceProxy
+key: ALLoggerProxy::lowDebug
+
+return void
+arg0 const std::string moduleName
+arg1 const std::string message
+method lowDebug
+
+framework CORE
+class ALLoggerProxy
+key: ALSpeechRecognitionProxy::loadVocabulary
+
+arg0 const std::string vocabulary
+framework AUDIO
+return void
+class ALSpeechRecognitionProxy
+method loadVocabulary
+
+key: ALVideoDeviceProxy::getDirectRawImageLocal
+
+arg0 const std::string Name
+framework VISION
+return AL::ALImage*
+class ALVideoDeviceProxy
+method getDirectRawImageLocal
+
+key: ALVisionExtractor::setParameter
+
+return void
+arg0 const std::string paramName
+arg1 const AL::ALValue paramValue
+method setParameter
+
+framework CORE
+class ALVisionExtractor
+key: ALMemoryProxy::getDataOnChange
+
+return AL::ALValue
+arg0 const std::string key
+arg1 const int deprecatedParameter
+method getDataOnChange
+
+framework CORE
+class ALMemoryProxy
+key: ALAudioDeviceProxy::enableEnergyComputation
+
+arg0 
+framework AUDIO
+return void
+class ALAudioDeviceProxy
+method enableEnergyComputation
+
+key: ALMotionProxy::getStiffnesses
+
+arg0 const AL::ALValue jointName
+framework MOTION
+return std::vector<float>
+class ALMotionProxy
+method getStiffnesses
+
+key: ALMotionProxy::waitUntilMoveIsFinished
+
+arg0 
+framework MOTION
+return void
+class ALMotionProxy
+method waitUntilMoveIsFinished
+
+key: ALResourceManagerProxy::getDataListName
+
+arg0 
+framework CORE
+return void
+class ALResourceManagerProxy
+method getDataListName
+
+key: ALMotionProxy::getSensorNames
+
+arg0 
+framework MOTION
+return std::vector<std::string>
+class ALMotionProxy
+method getSensorNames
+

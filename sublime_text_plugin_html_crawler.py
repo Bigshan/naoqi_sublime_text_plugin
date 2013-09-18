@@ -5,7 +5,8 @@
 # Mike McFarlane
 # v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and frameworks
 # TODO: BeautifulSoup - done
-# TODO: check for deprecated APIs
+# TODO: check for deprecated APIs, fully re-factor using Beautiful Soup and the full html for each api doc
+# TODO: rather than create method_dictionary, use dictionary comprehension
 
 """look for <dl class="function"> for the start of each method """
 """ then get everything between <dt and </dt> """
@@ -89,7 +90,10 @@ def find_arguments(arg_string):
 def build_methods_dictionary(methods_html):
 	"""build a dictionary of relevant info for each method"""
 	"""return a dictionary"""
+	#dictionary which will contain all info for all the methods and classes
 	methods_dictionary = {}
+	#dictionary which contains individual info for each method
+	method_dictionary = {}
 	
 	for i in methods_html:		
 		#find framework name
@@ -103,28 +107,59 @@ def build_methods_dictionary(methods_html):
 		first_internal_index = 0
 		for i in soup.select(".referenceinternal"):
 			if first_internal_index == 0:
-				print "return: " + i.string
+				nao_return = i.string
 				first_internal_index = 1
 			nao_arg_list = find_arguments(soup.get_text())
 		for i in soup.select(".descclassname"):
-			nao_class = i.string
+			#slice the :: off the end of the string
+			nao_class = i.string[:-2]
 		for i in soup.select(".descname"):
 			nao_method = i.string + "\n"
-		print "Framework: " + framework
-		print "Class: " + nao_class
-		print "Method: " + nao_method
-		for i in nao_arg_list:
-			print "Argument: " + i
-		print "\n"
+		#print it all out
+		# print "Framework: " + framework
+		# print "Class: " + nao_class
+		# print "Method: " + nao_method
+		# for i in nao_arg_list:
+		# 	print "Argument: " + i
+		# print "Returns: " + nao_return
+		# print "\n"
+		#save to method_dictionary, declaring a new empty one each time
+		method_dictionary = {}
+		key = nao_class + "::" + nao_method
+		method_dictionary['framework'] = framework
+		method_dictionary['class'] = nao_class
+		method_dictionary['method'] = nao_method
+		arg_index = 0
+		for k in nao_arg_list:
+			arg_number = "arg" + str(arg_index)
+			method_dictionary[arg_number] = k
+			arg_index += 1			
+		method_dictionary['return'] = nao_return
+		#save the dictionary into the main dictionary
+		methods_dictionary[key] = method_dictionary
+	return methods_dictionary
+
+def write_methods_to_file(methods_dictionary):
+	#write the sublime text autocompletions file
+	#format, see /Users/mikemcfarlane/Dropbox/Code/robotc-sublime-text-plugin/RobotC_v0-2/RobotC.sublime-completions
+	#and /Users/mikemcfarlane/Library/Application Support/Sublime Text 2/Packages/Python
+	naoqi_sublime_completions = open("naoqi.sublime-completions", "w")
+	for i in methods_dictionary:
+		naoqi_sublime_completions.write("key: " + i + "\n")
+		for j in methods_dictionary[i]:
+			naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
+	naoqi_sublime_completions.close()
 
 		
 html_list = get_html_file_list()
 methods_html = find_methods(html_list)
-build_methods_dictionary(methods_html)
-
-
-
-
+methods_dictionary = build_methods_dictionary(methods_html)
+for i in methods_dictionary:
+	print "key: " + i
+	for j in methods_dictionary[i]:
+		print j + " " + methods_dictionary[i][j]
+	print "\n"
+write_methods_to_file(methods_dictionary)
 
 
 
