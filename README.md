@@ -24,7 +24,7 @@ Once the code is a bit better I will get it registered to install with the excel
 <h2>Usage</h2>
 Once naoqi syntax selected from the Command Palette. The main naoqi functionality is in the methods, classes and 'frameworks' completion list.
 <ol>
-<li>To auto-complete a function or variable, start typing a method name, class name or code snippet name using lower case and access the completions list with CTRL+spacebar. Each value within a function can be jumped between with the TAB key.</li>
+<li>To auto-complete a method, class or snippet, start typing a method name, class name or code snippet name using lower case and access the completions list with CTRL+spacebar. Each argument within a method can be jumped between with the TAB key.</li>
 <li>To search for all the methods and classes within a 'framework' (Core, Motion, Audio, Vision, Sensors, Trackers, ConnectionManager), start typing a 'framework' name in UPPER case e.g. 'VISION' will list all the commands related to the Vision APIs.</li>
 </ol>
 
@@ -48,7 +48,8 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 
 <h2>To do:</h2>
 <ol>
-<li>More snippets needed.</li>
+<li>Current snippets are standard Python ones, so they need checked.</li>
+<li>More NAOqi snippets needed, the only one currently is 'Choregraph box'. Email me any you want included.</li>
 <li>Documentation crawler needs re-written to be more robust using Beautiful Soup.</li>
 <li>Needs to highlight or remove deprecated methods.</li>
 <li>Add events, proxies ....</li>
@@ -56,11 +57,14 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 
 <h2>Bugs:</h2>
 Report to 'mike >-at-< mikemcfarlane >-dot-< co >-dot-< uk' or discuss on Aldebaran forum thread.
+<ol>
+<li>Not showing arguments for some methods.</li>
+</ol>
 
 
 <h2>Attribution:</h2>
 <ol>
-<li>Uses standard Sublime Text Python package as a base.</li>
+<li>Uses standard Sublime Text Python package and snippets as a base.</li>
 <li>Uses NAOqi documentation created by Aldebaran Robotics.</li>
 </ol>
 

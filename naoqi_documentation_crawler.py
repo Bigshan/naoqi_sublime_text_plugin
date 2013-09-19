@@ -4,7 +4,7 @@
 # crawl a downloaded version of the naoqi documentation and creates a text file suitable for
 # creating a Sublime Text autocomplete plugin with class, methods, and arguments
 # Mike McFarlane
-# v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and frameworks
+# v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and 'frameworks' (e.g. core, vision, audio)
 
 # USAGE: set path to naoqi documentation in get_html_file_list()
 
@@ -151,14 +151,14 @@ def write_methods_to_file(methods_dictionary):
 	#write a proper autocompletions trigger file
 	naoqi_sublime_completions = open("naoqi.sublime-completions", "w")
 	naoqi_sublime_completions.write("{" + "\n")
-	naoqi_sublime_completions.write('''\t"scope": "source.py"''' + "\n\n")
+	naoqi_sublime_completions.write('''\t"scope": "source.python",''' + "\n\n")
 	naoqi_sublime_completions.write('''\t"completions":''' + "\n")
 	naoqi_sublime_completions.write('''\t[''' + "\n")
 	# for i in methods_dictionary:
 	# 	naoqi_sublime_completions.write("key: " + i + "\n")
 	# 	for j in methods_dictionary[i]:
 	# 		naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
-	pre_text = '\t\t{"trigger:"\t"'
+	pre_text = '\t\t{"trigger":\t"'
 	mid_text = '","contents": "'
 	size_of_methods_dictionary = len(methods_dictionary)
 	dictionary_loop_index = 1
