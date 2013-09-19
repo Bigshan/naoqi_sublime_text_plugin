@@ -1,47 +1,53 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# parse the naoqi documentation and creates a text file suitable for creating a Sublime Text plugin
+# crawl a downloaded version of the naoqi documentation and creates a text file suitable for
+# creating a Sublime Text autocomplete plugin with class, methods, and arguments
 # Mike McFarlane
 # v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and frameworks
-# TODO: BeautifulSoup - done
+
+# USAGE: set path to naoqi documentation in get_html_file_list()
+
+# TODO: BeautifulSoup - done for some
 # TODO: check for deprecated APIs, fully re-factor using Beautiful Soup and the full html for each api doc
 # TODO: rather than create method_dictionary, use dictionary comprehension
+# TODO: is the method return worth including?
 
-"""look for <dl class="function"> for the start of each method """
-""" then get everything between <dt and </dt> """
-"""look for first instance of <a class="reference internal" href="../stdtypes.html# then title=" for return type """
-"""look for <tt class="descclassname"> for class """
-"""look for <tt class="descname"> for methods """
-"""look for second instance of <a class="reference internal" for arguments """
+# html tags:
+# look for <dl class="function"> for the start of each method
+# then get everything between <dt and </dt>
+# look for first instance of <a class="reference internal" href="../stdtypes.html# then title=" for return type
+# look for <tt class="descclassname"> for class
+# look for <tt class="descname"> for methods
+# look for second instance of <a class="reference internal" for arguments
 
 import fnmatch
 import os
 from bs4 import BeautifulSoup
 
 def get_html_file_list():
-	"""finds all the HTML API docs in a defined folder"""
-	"""returns the list of html files as a list and writes them to a file"""
+	# finds all the HTML API docs in a defined folder
+	# returns the list of html files as a list and writes them to a file
 
 	PATH = '/Users/mikemcfarlane/Desktop/NAO_doc/doc-release-1.14-public/naoqi'
 	pattern = '*api*.html'
 
-	f = open("html_list.txt", "w")
+	#f = open("html_list.txt", "w")
 	html_list = []
 	 
 	for root, dirs, files in os.walk(PATH):
 	    for filename in fnmatch.filter(files, pattern):
 	        #print (os.path.join(root, filename))
-	        f.write((os.path.join(root, filename)) + "\n")
+	        #f.write((os.path.join(root, filename)) + "\n")
 	        html_list.append((os.path.join(root, filename)))
-	f.close()
+	#f.close()
 	return html_list
 
 def find_methods(html_list):
-	"""crawl all the html api docs and create a list with all the methods in"""
-	"""returns the methods list still in html tagged form"""
+	# crawl all the html api docs and create a list with all the methods in
+	# returns the methods list still in html tagged form
 
-	file_dump = open("file_dump.txt", "w")
+	#file_dump = open("file_dump.txt", "w")
 
 	methods_html = []
 	for api_file in html_list:
@@ -63,9 +69,9 @@ def find_methods(html_list):
 				methods_html.append("--" + api_file + "--" + method_info)
 				index = end_dt_tag
 				#file_dump.write(api_file +  "\n")
-				file_dump.write("--" + api_file + "--" + method_info + "\n\n")				
+				#file_dump.write("--" + api_file + "--" + method_info + "\n\n")				
 		f.close()
-	file_dump.close()
+	#file_dump.close()
 	return methods_html
 
 def find_arguments(arg_string):
@@ -80,7 +86,7 @@ def find_arguments(arg_string):
 	while True:
 		comma_position = arg_string.find(",", 0)
 		if comma_position == -1:
-			arg_list.append(str(arg_string))
+			#arg_list.append(str(arg_string))
 			break
 		else:
 			arg_list.append(str(arg_string[:comma_position]))
@@ -88,8 +94,8 @@ def find_arguments(arg_string):
 	return arg_list
 
 def build_methods_dictionary(methods_html):
-	"""build a dictionary of relevant info for each method"""
-	"""return a dictionary"""
+	# build a dictionary of relevant info for each method
+	# return a dictionary
 	#dictionary which will contain all info for all the methods and classes
 	methods_dictionary = {}
 	#dictionary which contains individual info for each method
@@ -141,21 +147,11 @@ def build_methods_dictionary(methods_html):
 
 def write_methods_to_file(methods_dictionary):
 	#write the sublime text autocompletions file
-	#format, see /Users/mikemcfarlane/Dropbox/Code/robotc-sublime-text-plugin/RobotC_v0-2/RobotC.sublime-completions
-	#and /Users/mikemcfarlane/Library/Application Support/Sublime Text 2/Packages/Python
 	
-	#just writing some stuff out to a file to test operation:-)
-	# naoqi_sublime_completions = open("naoqi.sublime-completions", "w")
-	# for i in methods_dictionary:
-	# 	naoqi_sublime_completions.write("key: " + i + "\n")
-	# 	for j in methods_dictionary[i]:
-	# 		naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
-	# naoqi_sublime_completions.close()
-
 	#write a proper autocompletions trigger file
 	naoqi_sublime_completions = open("naoqi.sublime-completions", "w")
 	naoqi_sublime_completions.write("{" + "\n")
-	naoqi_sublime_completions.write('''\t"scope": "source.py"''' + "\n")
+	naoqi_sublime_completions.write('''\t"scope": "source.py"''' + "\n\n")
 	naoqi_sublime_completions.write('''\t"completions":''' + "\n")
 	naoqi_sublime_completions.write('''\t[''' + "\n")
 	# for i in methods_dictionary:
@@ -164,7 +160,8 @@ def write_methods_to_file(methods_dictionary):
 	# 		naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
 	pre_text = '\t\t{"trigger:"\t"'
 	mid_text = '","contents": "'
-	end_text = '"},\n'
+	size_of_methods_dictionary = len(methods_dictionary)
+	dictionary_loop_index = 1
 	for i in methods_dictionary:
 		#assemble the trigger part of the string
 		nao_method = methods_dictionary[i]['method']
@@ -172,11 +169,35 @@ def write_methods_to_file(methods_dictionary):
 		nao_framework = methods_dictionary[i]['framework']
 		nao_trigger = nao_method + "\t" + nao_class + "\t" + nao_framework
 		#assemble the contents part of the string
-		nao_content = methods_dictionary[i]['method'] + "()"
+		#nao_content = methods_dictionary[i]['method'] + "()"
 		#assemble the argument string
-		
+		index = 1
+		argument_list = []
+		nao_method_with_args = methods_dictionary[i]['method'] + "("
+		for j in methods_dictionary[i]:
+			is_argument = j.find("arg")
+			if is_argument == 0:
+				argument_list.append(methods_dictionary[i][j])
+		if len(argument_list) == 0:
+			#nothing to see here
+			nao_method_with_args += ")"
+		else:
+			for j in argument_list[:-1]:
+				nao_method_with_args += "${" + str(index) + ":" + j + "},"
+				index += 1
+			else:
+				#last item in list so no comma at end
+				nao_method_with_args += "${" + str(index) + ":" + argument_list[-1] + "}"
+				
+			nao_method_with_args += ")"
+		#check if last item in dictionary
+		if dictionary_loop_index < size_of_methods_dictionary:
+			end_text = '"},\n'
+		else:
+			end_text = '"}\n'
+		dictionary_loop_index += 1
 		#and write to file
-		naoqi_sublime_completions.write(pre_text + nao_trigger + mid_text + nao_content + end_text)
+		naoqi_sublime_completions.write(pre_text + nao_trigger + mid_text + nao_method_with_args + end_text)
 
 	naoqi_sublime_completions.write('''\t]''' + "\n")
 	naoqi_sublime_completions.write("}" + "\n")
@@ -186,11 +207,6 @@ def write_methods_to_file(methods_dictionary):
 html_list = get_html_file_list()
 methods_html = find_methods(html_list)
 methods_dictionary = build_methods_dictionary(methods_html)
-# for i in methods_dictionary:
-# 	print "key: " + i
-# 	for j in methods_dictionary[i]:
-# 		print j + " " + methods_dictionary[i][j]
-# 	print "\n"
 write_methods_to_file(methods_dictionary)
 
 
