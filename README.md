@@ -14,6 +14,7 @@ The plug-in provides the following functionality:
 
 <h2>Installation:</h2>
 <ol>
+<li>Download naoqi_v*-*.sublime-package</li>
 <li>Copy naoqi_v*-*.sublime-package to ~/Library/Application Support/Sublime Text 2/Installed Packages on Mac OS X. There are Linux and Windows installation instructions at http://docs.sublimetext.info/en/latest/extensibility/packages.html</li>
 <li>Start Sublime Text and the package should auto-install.</li>
 </ol>
@@ -21,7 +22,7 @@ There are a few ways to check this, the easiest is to open the Command Palette a
 Once the code is a bit better I will get it registered to install with the excellent Package Control (http://wbond.net/sublime_packages/package_control) 
 
 <h2>Usage</h2>
-Once naoqi syntax selected. The main naoqi functionality is in the methods, classes and 'frameworks' completion list.
+Once naoqi syntax selected from the Command Palette. The main naoqi functionality is in the methods, classes and 'frameworks' completion list.
 <ol>
 <li>To auto-complete a function or variable, start typing a method name, class name or code snippet name using lower case and access the completions list with CTRL+spacebar. Each value within a function can be jumped between with the TAB key.</li>
 <li>To search for all the methods and classes within a 'framework' (Core, Motion, Audio, Vision, Sensors, Trackers, ConnectionManager), start typing a 'framework' name in UPPER case e.g. 'VISION' will list all the commands related to the Vision APIs.</li>
