@@ -7,8 +7,9 @@ The plug-in provides the following functionality:
 <ol>
 <li>Python syntax color formatting via the Command Palette.</li>
 <li>Basic NAOqi Python code snippets via the completions list.</li>
-<li>NAOqi methods and arguments completions via the completions list.</li>
+<li>Auto-complete of NAOqi methods via the completions list.</li>
 <li>Search for relevant NAOqi classes, methods and 'frameworks' (Core, Motion, Audio, Vision, Sensors, Trackers, ConnectionManager) via the completions list.</li>
+<li>Tabbed completion of method arguments after a method with arguments selected.</li>
 <li>Currently for NAOqi v1.14, but there is a Python documentation crawler included if you want to build completions for another version of NAOqi.</li>
 </ol>
 
@@ -32,7 +33,7 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <ol>
 <li>If you wish to make your own completions file e.g. for older or newer versions of NAOqi.</li>
 <li>My crawler may not be robust enough yet until re-written and tested on other versions of the documentation.</li>
-<li>Download the version of the documentation you need.</li>
+<li>Download the version of the documentation you need. (It's just a bit quicker than a web crawl.)</li>
 <li>Get 'naoqi_documentation_crawler.py' from my Github page https://github.com/mikemcfarlane/naoqi_sublime_text_plugin</li>
 <li>You will need Beautiful Soup 4 library http://www.crummy.com/software/BeautifulSoup/</li>
 <li>Edit the 'PATH' variable in the function 'get_html_file_list' in naoqi_documentation_crawler.py, it should point to the folder 'naoqi' within the downloaded folder.</li>
