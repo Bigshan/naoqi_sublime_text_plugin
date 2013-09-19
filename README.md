@@ -54,6 +54,7 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <li>Documentation crawler needs re-written to be more robust using Beautiful Soup.</li>
 <li>Needs to highlight or remove deprecated methods.</li>
 <li>Add events, proxies ....</li>
+<li>Have a think about the C++ API.</li>
 </ol>
 
 <h2>Bugs:</h2>
