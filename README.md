@@ -58,7 +58,7 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <h2>Bugs:</h2>
 Report to 'mike >-at-< mikemcfarlane >-dot-< co >-dot-< uk' or discuss on Aldebaran forum thread.
 <ol>
-<li>Not showing arguments for some methods.</li>
+<li>Not showing arguments for some methods. - fixed tbc</li>
 </ol>
 
 

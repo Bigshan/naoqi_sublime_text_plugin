@@ -5,6 +5,7 @@
 # creating a Sublime Text autocomplete plugin with class, methods, and arguments
 # Mike McFarlane
 # v0-1: 23 Aug 2013, crawl docs and build a list of methods, classes and 'frameworks' (e.g. core, vision, audio)
+# v0-11: 19 Sep 2013, fixed bug with missing arguments and duplicate dictionary keys overwritign methods
 
 # USAGE: set path to naoqi documentation in get_html_file_list()
 
@@ -32,22 +33,22 @@ def get_html_file_list():
 	PATH = '/Users/mikemcfarlane/Desktop/NAO_doc/doc-release-1.14-public/naoqi'
 	pattern = '*api*.html'
 
-	#f = open("html_list.txt", "w")
+	# f = open("html_list.txt", "w")
 	html_list = []
 	 
 	for root, dirs, files in os.walk(PATH):
 	    for filename in fnmatch.filter(files, pattern):
 	        #print (os.path.join(root, filename))
-	        #f.write((os.path.join(root, filename)) + "\n")
+	        # f.write((os.path.join(root, filename)) + "\n")
 	        html_list.append((os.path.join(root, filename)))
-	#f.close()
+	# f.close()
 	return html_list
 
 def find_methods(html_list):
 	# crawl all the html api docs and create a list with all the methods in
 	# returns the methods list still in html tagged form
 
-	#file_dump = open("file_dump.txt", "w")
+	# file_dump = open("file_dump.txt", "w")
 
 	methods_html = []
 	for api_file in html_list:
@@ -68,10 +69,10 @@ def find_methods(html_list):
 				method_info = file_contents[start_dt_tag + 4:end_dt_tag]
 				methods_html.append("--" + api_file + "--" + method_info)
 				index = end_dt_tag
-				#file_dump.write(api_file +  "\n")
-				#file_dump.write("--" + api_file + "--" + method_info + "\n\n")				
+				# file_dump.write(api_file +  "\n")
+				# file_dump.write("--" + api_file + "--" + method_info + "\n\n")				
 		f.close()
-	#file_dump.close()
+	# file_dump.close()
 	return methods_html
 
 def find_arguments(arg_string):
@@ -82,12 +83,18 @@ def find_arguments(arg_string):
 	arg_string = arg_string[start_string:end_string]
 	#remove ampersand chars
 	arg_string = arg_string.replace("&", "")
+	# print arg_string
 	arg_list = []
 	while True:
 		comma_position = arg_string.find(",", 0)
 		if comma_position == -1:
-			#arg_list.append(str(arg_string))
-			break
+			if not str(arg_string):
+				# print "arg_string was empty"
+				break
+			else:
+				arg_list.append(str(arg_string))
+				# print "arg_string: " + str(arg_string)
+				break
 		else:
 			arg_list.append(str(arg_string[:comma_position]))
 			arg_string = arg_string[comma_position+2:]
@@ -109,7 +116,9 @@ def build_methods_dictionary(methods_html):
 		#find return type, class, method and arguments
 		#need to remove the space in 'reference internal' or not recognised as class by beautiful soup
 		j = i.replace("reference internal", "referenceinternal")
-		soup = BeautifulSoup(j)
+		# nasty unicode bodge to get rid of some characters
+		k = unicode(j, errors='ignore')
+		soup = BeautifulSoup(k)
 		first_internal_index = 0
 		for i in soup.select(".referenceinternal"):
 			if first_internal_index == 0:
@@ -121,7 +130,7 @@ def build_methods_dictionary(methods_html):
 			nao_class = i.string[:-2]
 		for i in soup.select(".descname"):
 			nao_method = i.string
-		#print it all out
+		# print it all out
 		# print "Framework: " + framework
 		# print "Class: " + nao_class
 		# print "Method: " + nao_method
@@ -131,7 +140,8 @@ def build_methods_dictionary(methods_html):
 		# print "\n"
 		#save to method_dictionary, declaring a new empty one each time
 		method_dictionary = {}
-		key = nao_class + "::" + nao_method
+		# it is possible to duplicate keys with only class + method, so use args also
+		key = nao_class + "::" + nao_method + "-" + str(nao_arg_list)
 		method_dictionary['framework'] = framework
 		method_dictionary['class'] = nao_class
 		method_dictionary['method'] = nao_method
