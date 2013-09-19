@@ -114,7 +114,7 @@ def build_methods_dictionary(methods_html):
 			#slice the :: off the end of the string
 			nao_class = i.string[:-2]
 		for i in soup.select(".descname"):
-			nao_method = i.string + "\n"
+			nao_method = i.string
 		#print it all out
 		# print "Framework: " + framework
 		# print "Class: " + nao_class
@@ -143,22 +143,54 @@ def write_methods_to_file(methods_dictionary):
 	#write the sublime text autocompletions file
 	#format, see /Users/mikemcfarlane/Dropbox/Code/robotc-sublime-text-plugin/RobotC_v0-2/RobotC.sublime-completions
 	#and /Users/mikemcfarlane/Library/Application Support/Sublime Text 2/Packages/Python
+	
+	#just writing some stuff out to a file to test operation:-)
+	# naoqi_sublime_completions = open("naoqi.sublime-completions", "w")
+	# for i in methods_dictionary:
+	# 	naoqi_sublime_completions.write("key: " + i + "\n")
+	# 	for j in methods_dictionary[i]:
+	# 		naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
+	# naoqi_sublime_completions.close()
+
+	#write a proper autocompletions trigger file
 	naoqi_sublime_completions = open("naoqi.sublime-completions", "w")
+	naoqi_sublime_completions.write("{" + "\n")
+	naoqi_sublime_completions.write('''\t"scope": "source.py"''' + "\n")
+	naoqi_sublime_completions.write('''\t"completions":''' + "\n")
+	naoqi_sublime_completions.write('''\t[''' + "\n")
+	# for i in methods_dictionary:
+	# 	naoqi_sublime_completions.write("key: " + i + "\n")
+	# 	for j in methods_dictionary[i]:
+	# 		naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
+	pre_text = '\t\t{"trigger:"\t"'
+	mid_text = '","contents": "'
+	end_text = '"},\n'
 	for i in methods_dictionary:
-		naoqi_sublime_completions.write("key: " + i + "\n")
-		for j in methods_dictionary[i]:
-			naoqi_sublime_completions.write(j + " " + methods_dictionary[i][j] + "\n")
+		#assemble the trigger part of the string
+		nao_method = methods_dictionary[i]['method']
+		nao_class = methods_dictionary[i]['class']
+		nao_framework = methods_dictionary[i]['framework']
+		nao_trigger = nao_method + "\t" + nao_class + "\t" + nao_framework
+		#assemble the contents part of the string
+		nao_content = methods_dictionary[i]['method'] + "()"
+		#assemble the argument string
+		
+		#and write to file
+		naoqi_sublime_completions.write(pre_text + nao_trigger + mid_text + nao_content + end_text)
+
+	naoqi_sublime_completions.write('''\t]''' + "\n")
+	naoqi_sublime_completions.write("}" + "\n")
 	naoqi_sublime_completions.close()
 
 		
 html_list = get_html_file_list()
 methods_html = find_methods(html_list)
 methods_dictionary = build_methods_dictionary(methods_html)
-for i in methods_dictionary:
-	print "key: " + i
-	for j in methods_dictionary[i]:
-		print j + " " + methods_dictionary[i][j]
-	print "\n"
+# for i in methods_dictionary:
+# 	print "key: " + i
+# 	for j in methods_dictionary[i]:
+# 		print j + " " + methods_dictionary[i][j]
+# 	print "\n"
 write_methods_to_file(methods_dictionary)
 
 
