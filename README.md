@@ -12,6 +12,7 @@ The plug-in provides the following functionality:
 <li>Tabbed completion of method arguments after a method with arguments selected.</li>
 <li>Currently for NAOqi v1.14, but there is a Python documentation crawler included if you want to build completions for another version of NAOqi.</li>
 </ol>
+e.g. if you want to know what methods are available to do with speech, start typing 'ALTextToSpeechProxy', you will probably only need to type 'ALTe' (plus hit CTRL+Space if completions window not enabled) and you will see all the methods for ALTextToSpeechProxy.
 
 <h2>Installation:</h2>
 <ol>
@@ -50,11 +51,13 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <h2>To do:</h2>
 <ol>
 <li>Current snippets are standard Python ones, so they need checked.</li>
-<li>More NAOqi snippets needed, the only one currently is 'Choregraph box'. Email me any you want included.</li>
+<li>More NAOqi snippets needed, the only one currently is 'choregraph box'. Email me any you want included.</li>
 <li>Documentation crawler needs re-written to be more robust using Beautiful Soup.</li>
 <li>Needs to highlight or remove deprecated methods.</li>
-<li>Add events, proxies ....</li>
+<li>Add events, HIGH PRIORITY</li>
 <li>Have a think about the C++ API.</li>
+<li>The completions window is quite small, and not configurable, so need to optimise display of info.</li>
+<li>Maybe show a methods arguments in the completions window, for clarity, and as some class::methods are similar.</li>
 </ol>
 
 <h2>Bugs:</h2>
