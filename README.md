@@ -59,6 +59,8 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <li>Have a think about the C++ API.</li>
 <li>The completions window is quite small, and not configurable, so need to optimise display of info.</li>
 <li>Maybe show a methods arguments in the completions window, for clarity, and as some class::methods are similar. Completions window small and non-configurable, and needs also to differentiate methods and events, so need to keep compact.</li>
+<li>Submit to Sublime Package Manager once stable</li>
+<li>Possible to include link/jump to documentation?</li>
 </ol>
 
 <h2>Bugs:</h2>
