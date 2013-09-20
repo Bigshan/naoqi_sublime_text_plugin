@@ -50,14 +50,15 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 
 <h2>To do:</h2>
 <ol>
+<li>Add events, HIGH PRIORITY</li>
+<li>Methods in alphabetical order, HIGH PRIORITY</li>
+<li>Needs to highlight or remove deprecated methods.</li>
 <li>Current snippets are standard Python ones, so they need checked.</li>
 <li>More NAOqi snippets needed, the only one currently is 'choregraph box'. Email me any you want included.</li>
 <li>Documentation crawler needs re-written to be more robust using Beautiful Soup.</li>
-<li>Needs to highlight or remove deprecated methods.</li>
-<li>Add events, HIGH PRIORITY</li>
 <li>Have a think about the C++ API.</li>
 <li>The completions window is quite small, and not configurable, so need to optimise display of info.</li>
-<li>Maybe show a methods arguments in the completions window, for clarity, and as some class::methods are similar.</li>
+<li>Maybe show a methods arguments in the completions window, for clarity, and as some class::methods are similar. Completions window small and non-configurable, and needs also to differentiate methods and events, so need to keep compact.</li>
 </ol>
 
 <h2>Bugs:</h2>
