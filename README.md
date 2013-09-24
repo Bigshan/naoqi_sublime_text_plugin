@@ -28,6 +28,7 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <ol>
 <li>To auto-complete a method, class or snippet, start typing a method name, class name or code snippet name using lower case and access the completions list with CTRL+spacebar. Each argument within a method can be jumped between with the TAB key.</li>
 <li>To search for all the methods and classes within a 'framework' (Core, Motion, Audio, Vision, Sensors, Trackers, ConnectionManager), start typing a 'framework' name in UPPER case e.g. 'VISION' will list all the commands related to the Vision APIs.</li>
+<li>To search for an event within a 'framework' (Core, Motion, Audio, Vision, Sensors, Trackers, ConnectionManager), type 'EVENT' to see a complete list of events, or type the framework name in upper case to show all methods and events for that framework. Or just start typing the name of the event to get a completion.</li>
 </ol>
 
 <h2>To create your own completions</h2>
@@ -46,11 +47,12 @@ Once naoqi syntax selected from the Command Palette. The main naoqi functionalit
 <h2>Versions:</h2>
 <ul>
 <li>0.1 - getting something working, using NAOqi v1.14.</li>
+<li>0.12 - add events</li>
 </ul>
 
 <h2>To do:</h2>
 <ol>
-<li>Add events, HIGH PRIORITY</li>
+<li>Add events, HIGH PRIORITY - DONE</li>
 <li>Methods in alphabetical order, HIGH PRIORITY</li>
 <li>Needs to highlight or remove deprecated methods.</li>
 <li>Current snippets are standard Python ones, so they need checked.</li>
