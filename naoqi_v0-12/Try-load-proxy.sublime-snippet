@@ -1,0 +1,13 @@
+<snippet>
+	<tabTrigger>try</tabTrigger>
+    <scope>source.python</scope>
+    <description>Try/Exception - Proxy</description>
+
+<content><![CDATA[
+try:
+	${1:Proxy} = ALProxy("${2:Module}")
+except Exception, e:
+	print "Could not create proxy to ${3:Module}"
+	print "Error was: ", e
+]]></content>
+</snippet>

@@ -1,4 +1,4 @@
-<h1>naoqi Sublime Text 2 plugin package</h1>
+	<h1>naoqi Sublime Text 2 plugin package</h1>
 
 A plug-in package for Sublime Text 2 (http://www.sublimetext.com/) for writing NAOqi Python API code for Aldebaran Robotics NAO robot (http://www.aldebaran-robotics.com/). Allows you to write NAOqi Python on Mac OS X, Linux and Windows in a very clean and fast text editor. Can then be used in Choregraph or run directly on NAO.
 
