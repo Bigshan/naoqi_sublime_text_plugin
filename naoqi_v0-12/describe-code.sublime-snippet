@@ -1,0 +1,18 @@
+<snippet>
+	<tabTrigger>describe code</tabTrigger>
+    <scope>source.python</scope>
+    <description>standard text to describe code to be placed at top of each file</description>
+
+<content><![CDATA[
+# DESCRIPTION:
+# ${1:Describe what this code does.}
+# PROGRAMMER: 
+# ${2:Who you are.}
+# VERSION HISTORY (version, date, description):
+# ${3:Version number},${4:Date},${5:describe changes.}
+# USAGE: 
+# ${6:Instructions including paths and variable to set.}
+# TODO:
+# ${7:A place to note anything to do in future.}
+]]></content>
+</snippet>
