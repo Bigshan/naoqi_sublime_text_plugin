@@ -1,8 +1,11 @@
 <snippet>
-    <tabTrigger>defs</tabTrigger>
+    <tabTrigger>def</tabTrigger>
     <scope>source.python</scope>
-    <description>Method</description>
+    <description>Method - multi args</description>
 
-	<content><![CDATA[def ${1:function}(self${2}):
+    <content><![CDATA[def ${1:function}(${2:self}, ${3:*_args}, ${4:*_kwargs}):
+    """
+    ${5:docstring}
+    """	
 	${0:pass}]]></content>
 </snippet>

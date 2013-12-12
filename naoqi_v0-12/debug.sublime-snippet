@@ -1,0 +1,14 @@
+<snippet>
+    <tabTrigger>debug</tabTrigger>
+    <scope>source.python</scope>
+    <description>debug snippet - speak, write to log</description>
+
+    <content><![CDATA[
+message = "${1:message string}"
+data = str(${2:data})
+self.log(message)
+self.log(data)
+self.speechProxy.say(message)
+self.speechProxy.say(data)
+    ]]></content>
+</snippet>
